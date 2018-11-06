@@ -1,0 +1,252 @@
+/* root */
+
+$black: #333;
+$white: #fff;
+$darkgray: #757575;
+$gray: #c5c5c5;
+$lightgray: #f5f5f5;
+$darkblue: #024a97;
+$blue: #3b99fc;
+$lightblue: #a0cefe;
+$orange: #fc642d;
+$transition-time: .2s;
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/**
+* use nice system font:
+*     -apple-system: macOS/iOS
+*     Segoe UI: Windows
+*     Roboto: Android
+*     Ubuntu: Ubuntu
+*     Cantarell: Gnome
+*     Open Sans: fallback Linux
+*     sans-serif: fallback
+*/
+body {
+    margin: 1.375em;
+    font-family: -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Open Sans", sans-serif;
+    color: $black;
+
+    @media only screen and (min-width: 480px) {
+        margin: 2.75em;
+    }
+}
+
+/* anchor */
+
+a {
+    color: $blue;
+
+    &:visited {
+        color: $darkblue;
+    }
+
+    &:active {
+        color: $orange;
+    }
+}
+
+/* address */
+
+address {
+    font-style: normal;
+}
+
+/* code */
+
+pre code {
+    display: block;
+    padding: .5em;
+    background-color: $lightgray;
+    color: $darkgray;
+    line-height: 1.5;
+}
+
+/* horizontal ruler */
+
+hr {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-style: solid solid none;
+    border-color: $gray;
+}
+
+/* form */
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+
+    & + & {
+        margin-top: 1em;
+    }
+}
+
+legend {
+    @extend caption;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+label,
+button,
+[role="button"] {
+    cursor: pointer;
+}
+
+button {
+    padding: .5em 1.25em;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    border: 1px solid $gray;
+    border-radius: 2em;
+    font-family: inherit;
+    font-size: inherit;
+    transition: border-color $transition-time, background-color $transition-time;
+
+    &::-moz-focus-inner {
+        border-width: 0;
+    }
+
+    &:hover {
+        border-color: $darkgray;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: $darkgray;
+        box-shadow: 0 0 0 2px $lightblue;
+    }
+
+    &:active {
+        background-image: none;
+        border-color: $darkgray;
+        box-shadow: inset 0 .15em .3em rgba(27, 31, 35, .15);
+    }
+}
+
+select {
+    cursor: pointer;
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 $black;
+    }
+
+    &:not([multiple]):not([size]) {
+        padding-right: 1.75rem;
+        background-color: $white;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 49.6"><path fill="%23999" d="M42.4 49.6c-.7 0-1.4-.3-2-.9L.8 9C.2 8.5 0 7.9 0 7.2s.2-1.4.8-2L5 .9C5.6.3 6.3 0 7 0s1.4.3 2 .9l33.4 33.4L76 .9c.5-.6 1.2-.9 1.9-.9s1.4.3 2 .9l4.3 4.3c.6.5.9 1.2.9 2s-.4 1.4-1 1.8L44.4 48.7c-.5.6-1.1.9-2 .9z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right .5rem center;
+        background-size: .813rem .5rem;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+    }
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    padding: .5em .625em;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    transition: border-color $transition-time;
+
+    &:focus {
+        outline: 0;
+        border-color: $blue;
+        box-shadow: 0 0 0 2px $lightblue;
+    }
+}
+
+input:not(:focus):hover,
+select:not(:focus):hover,
+textarea:not(:focus):hover,
+label:hover > input:not(:focus),
+label:hover > select:not(:focus),
+label:hover > textarea:not(:focus) {
+    box-shadow: 0 0 0 1px $lightblue;
+}
+
+button,
+input,
+select,
+textarea,
+label:hover > input,
+label:hover > select,
+label:hover > textarea {
+    &[disabled],
+    &[disabled]:hover {
+        border-color: $gray;
+        background-color: $lightgray;
+        cursor: not-allowed;
+        opacity: .5;
+        box-shadow: none;
+    }
+}
+
+/* figure */
+
+figure {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* image */
+
+img {
+    max-width: 100%;
+}
+
+/* table */
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+    border: 1px solid $gray;
+}
+
+caption {
+    margin-bottom: 1em;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+thead {
+    text-align: left;
+}
+
+thead tr {
+    border-bottom: 1px solid $gray;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: $lightgray;
+}
+
+tbody tr:hover {
+    background-color: $gray;
+}
+
+th,
+td {
+    padding: .5rem .75rem;
+}
+
+/* dialog */
+
+dialog {
+    position: fixed;
+    top: 1em;
+    border-color: $black;
+}

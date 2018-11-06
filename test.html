@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML beautify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="dist/embellish.css">
+</head>
+<body>
+    <h1>HTML Demo Page</h1>
+    <p>A Test Page for all convinent HTML Elements</p>
+    <button id="style-toggle-btn" type="button">Toggle embellish.css</button>
+    <script>
+        const styleToggleBtn = document.getElementById('style-toggle-btn')
+        const getCssLinkElement = () => document.head.querySelector('link') || document.body.querySelector('style')
+        const cssLinkElementClone = getCssLinkElement().cloneNode(true)
+
+        const toggleStyle = () => {
+            const cssLinkElement = getCssLinkElement()
+            if (cssLinkElement) {
+                cssLinkElement.parentNode.removeChild(cssLinkElement)
+            } else {
+                document.head.appendChild(cssLinkElementClone)
+            }
+        }
+
+        styleToggleBtn.addEventListener('click', toggleStyle)
+    </script>
+    <h2>Text</h2>
+    <h3>Paragraphs of text</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit <a href="https://www.duckduckgo.com" target="_blank">DuckDuckGo</a>, sed do eiusmod tempor <a href="#top">incididunt ut labore</a> et dolore magna aliqua.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <p>
+        <b>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </b>
+    </p>
+    <p>
+        <i>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </i>
+    </p>
+    <h3>Adress</h3>
+    <address>
+        Joe Doe<br>
+        Fakestreet 123<br>
+        12345 Capital City
+    </address>
+    <h3>Code</h3>
+    <pre><code>
+    function foo(bar) {
+        console.log(bar)
+    }
+    </code></pre>
+    <hr>
+    <h2>Lists</h2>
+    <h3>Unorderd List</h3>
+    <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Sed do eiusmod tempor incididunt</li>
+        <li>Ut enim ad minim veniam</li>
+        <li>Duis aute irure dolor</li>
+        <li>Sunt in culpa qui officia</li>
+    </ul>
+    <h3>Orderd List</h3>
+    <ol>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Sed do eiusmod tempor incididunt</li>
+        <li>Ut enim ad minim veniam</li>
+        <li>Duis aute irure dolor</li>
+        <li>Sunt in culpa qui officia</li>
+    </ol>
+    <h3>Definition List</h3>
+    <dl>
+        <dt>Lore Ipsum</dt>
+        <dd>Sed do eiusmod tempor incididunt, ut enim ad minim veniam</dd>
+    </dl>
+    <hr>
+    <h2>Forms</h2>
+    <form>
+        <fieldset>
+            <legend>Input</legend>
+            <label>
+                <span>Text</span>
+                <input type="text" placeholder="Enter some Text">
+            </label>
+            <label>
+                <span>Email</span>
+                <input type="email">
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password">
+            </label>
+            <label>
+                <span>Search</span>
+                <input type="search">
+            </label>
+            <label>
+                <span>Number</span>
+                <input type="number">
+            </label>
+            <label>
+                <span>Text (disabled)</span>
+                <input type="text" placeholder="Enter some Text" disabled>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Select</legend>
+            <select>
+                <option disabled selected>Select</option>
+                <option>Option I</option>
+                <option>Option II</option>
+                <option>Option III</option>
+            </select>
+            <select multiple>
+                <option disabled selected>multiple Select</option>
+                <option>Option I</option>
+                <option>Option II</option>
+                <option>Option III</option>
+            </select>
+            <select disabled>
+                <option disabled selected>Select (disabled)</option>
+                <option>Option I</option>
+                <option>Option II</option>
+                <option>Option III</option>
+            </select>
+            <select multiple disabled>
+                <option disabled selected>multiple Select (disabled)</option>
+                <option>Option I</option>
+                <option>Option II</option>
+                <option>Option III</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Textarea</legend>
+            <label>
+                <span>Textfeld</span>
+                <textarea></textarea>
+            </label>
+            <label>
+                <span>Textfeld (disabled)</span>
+                <textarea disabled></textarea>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Radio &amp; Checkbox</legend>
+            <label>
+                <input type="radio">
+                <span>Radiobutton</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Checkbox</span>
+            </label>
+            <label>
+                <input type="radio" disabled>
+                <span>Radiobutton (disabled)</span>
+            </label>
+            <label>
+                <input type="checkbox" disabled>
+                <span>Checkbox (disabled)</span>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Button</legend>
+            <button type="submit">Button</button>
+            <button type="submit" disabled>Button (disabled)</button>
+        </fieldset>
+    </form>
+    <hr>
+    <h2>Images</h2>
+    <h3>Image inline Text</h3>
+    <p>
+        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Reagan%2BSchwarzenegger1984.jpg/300px-Reagan%2BSchwarzenegger1984.jpg">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <h3>Image in a figure</h3>
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/ArnoldSchwarzeneggerSDJun10.jpg/220px-ArnoldSchwarzeneggerSDJun10.jpg">
+        <figcaption>An image with a figcaption</figcaption>
+    </figure>
+    <hr>
+    <h2>Table</h2>
+    <table>
+        <caption>Table Caption</caption>
+        <thead>
+            <tr>
+                <th>Movie</th>
+                <th>Director</th>
+                <th>Release Year</th>
+                <th>Budget</th>
+                <th>Box Office</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Conan the Barbarian</td>
+                <td>John Milius</td>
+                <td>1982</td>
+                <td>$16.000.000</td>
+                <td>$130.000.000</td>
+            </tr>
+            <tr>
+                <td>Terminator</td>
+                <td>James Cameron</td>
+                <td>1984</td>
+                <td>$6.400.000</td>
+                <td>$78.300.000</td>
+            </tr>
+            <tr>
+                <td>Commando</td>
+                <td>Mark L. Lester</td>
+                <td>1985</td>
+                <td>$10.000.000</td>
+                <td>$57.500.000</td>
+            </tr>
+            <tr>
+                <td>Predator</td>
+                <td>John McTiernan</td>
+                <td>1987</td>
+                <td>$18.000.000</td>
+                <td>$98.300.000</td>
+            </tr>
+            <tr>
+                <td>Total Recall</td>
+                <td>Paul Verhoeven</td>
+                <td>1990</td>
+                <td>$60.000.000</td>
+                <td>$261.300.000</td>
+            </tr>
+            <tr>
+                <td>Last Action Hero</td>
+                <td>John McTiernan</td>
+                <td>1993</td>
+                <td>$85.300.000</td>
+                <td>$137.300.000</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Dialog</h2>
+    <button id="toggle-dialog-btn" type="button">Toggle Dialog</button>
+    <dialog>
+        An Important Message
+    </dialog>
+    <script>
+        const dialog = document.getElementsByTagName('dialog')[0]
+        const toggleDialogBtn = document.getElementById('toggle-dialog-btn')
+
+        const toggleDialog = (show) => {
+            const isOpen = dialog.getAttribute('open')
+            if (isOpen) {
+                dialog.removeAttribute('open')
+            }
+            else {
+                dialog.setAttribute('open', true)
+            }
+        }
+
+        toggleDialogBtn.addEventListener('click', toggleDialog)
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "embellish.css",
+  "version": "1.0.0",
+  "description": "CSS file that beautifies your HTML with element selectors only",
+  "main": "embellish.css",
+  "style": "embellish.css",
+  "files": [
+    "LICENSE",
+    "dist/embellish.css"
+  ],
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jzilg/embellish.css.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "beautify",
+    "styling"
+  ],
+  "author": "Johannes Zilg <https://jzilg.github.io>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jzilg/embellish.css/issues"
+  },
+  "homepage": "https://github.com/jzilg/embellish.css",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
