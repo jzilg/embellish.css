@@ -3,7 +3,7 @@ CSS File that beautifies your HTML with element selectors only. Perfect for quic
 
 ## Demo
 An example page with all elements that are beautified by **embellish.css** can be found
-[here](http://htmlpreview.github.io/?https://raw.githubusercontent.com/jzilg/beautify-css/master/test.html).
+[here](http://htmlpreview.github.io/?https://raw.githubusercontent.com/jzilg/embellish.css/master/test.html).
 
 ## Getting Started
 
