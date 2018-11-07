@@ -193,6 +193,11 @@ label:hover > textarea {
     }
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+}
+
 /* figure */
 
 figure {

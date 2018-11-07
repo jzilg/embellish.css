@@ -184,6 +184,11 @@ label:hover > textarea[disabled]:hover {
 	box-shadow: none;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+	cursor: pointer;
+}
+
 /* figure */
 
 figure {
