@@ -13,15 +13,28 @@
     <button id="style-toggle-btn" type="button">Toggle embellish.css</button>
     <script>
         const styleToggleBtn = document.getElementById('style-toggle-btn')
-        const getCssLinkElement = () => document.head.querySelector('link') || document.body.querySelector('style')
-        const cssLinkElementClone = getCssLinkElement().cloneNode(true)
+        const getStyleElement = () => document.body.querySelector('style')
+        const buffer = {}
+
+        const resetBuffer = () => {
+            buffer.isFilled = false
+            buffer.type = ''
+            buffer.content = null
+        }
+
+        resetBuffer()
 
         const toggleStyle = () => {
-            const cssLinkElement = getCssLinkElement()
-            if (cssLinkElement) {
-                cssLinkElement.parentNode.removeChild(cssLinkElement)
-            } else {
-                document.head.appendChild(cssLinkElementClone)
+            const styleElement = getStyleElement()
+            if (styleElement && !buffer.isFilled) {
+                buffer.isFilled = true
+                buffer.type = 'styleInnerText'
+                buffer.content = styleElement.innerText
+                styleElement.innerText = ''
+            }
+            else if (buffer.type === 'styleInnerText') {
+                styleElement.innerText = buffer.content
+                resetBuffer()
             }
         }
 
