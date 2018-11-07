@@ -18,5 +18,5 @@ npm install embellish.css
 ```
 
 ### Download
-* Develop: https://raw.githubusercontent.com/jzilg/beautify-css/master/dist/embellish.css
-* Production: https://raw.githubusercontent.com/jzilg/beautify-css/master/dist/embellish.min.css
+* Develop: https://raw.githubusercontent.com/jzilg/embellish.css/master/dist/embellish.css
+* Production: https://raw.githubusercontent.com/jzilg/embellish.css/master/dist/embellish.min.css
