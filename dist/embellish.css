@@ -55,8 +55,8 @@ pre code {
 /* horizontal ruler */
 
 hr {
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-top: 2em;
+	margin-bottom: 2em;
 	border-style: solid solid none;
 	border-color: #c5c5c5;
 }
