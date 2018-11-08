@@ -128,7 +128,6 @@ select:-moz-focusring {
 
 select:not([multiple]):not([size]) {
 	padding-right: 1.75rem;
-	background-color: #fff;
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 49.6"><path fill="%23999" d="M42.4 49.6c-.7 0-1.4-.3-2-.9L.8 9C.2 8.5 0 7.9 0 7.2s.2-1.4.8-2L5 .9C5.6.3 6.3 0 7 0s1.4.3 2 .9l33.4 33.4L76 .9c.5-.6 1.2-.9 1.9-.9s1.4.3 2 .9l4.3 4.3c.6.5.9 1.2.9 2s-.4 1.4-1 1.8L44.4 48.7c-.5.6-1.1.9-2 .9z"/></svg>');
 	background-repeat: no-repeat;
 	background-position: right .5rem center;
