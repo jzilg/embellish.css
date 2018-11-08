@@ -133,6 +133,7 @@ button {
 
 select {
     cursor: pointer;
+    background-color: $white;
 
     &:-moz-focusring {
         color: transparent;

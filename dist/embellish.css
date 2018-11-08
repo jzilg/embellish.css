@@ -118,6 +118,7 @@ button:active {
 
 select {
 	cursor: pointer;
+	background-color: #fff;
 }
 
 select:-moz-focusring {
