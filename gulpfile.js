@@ -22,5 +22,5 @@ const buildCSS = () => gulp.src(srcFiles)
 gulp.task('default', buildCSS)
 
 gulp.task('watch', () => {
-    gulp.watch(srcFiles, ['default'])
+    gulp.watch(srcFiles, gulp.series('default'))
 })
