@@ -137,24 +137,29 @@ select:not([multiple]):not([size]) {
 	-webkit-appearance: none;
 }
 
-input:not([type="checkbox"]):not([type="radio"]),
+input,
 select,
 textarea {
-	padding: .5em .625em;
 	border: 1px solid #c5c5c5;
-	border-radius: 5px;
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
 	transition: border-color 0.2s;
 }
 
-input:not([type="checkbox"]):not([type="radio"]):focus,
+input:focus,
 select:focus,
 textarea:focus {
 	outline: 0;
 	border-color: #3b99fc;
 	box-shadow: 0 0 0 2px #a0cefe;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+	padding: .5em .625em;
+	border-radius: 5px;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
 }
 
 input:not(:focus):hover,
@@ -163,7 +168,7 @@ textarea:not(:focus):hover,
 label:hover > input:not(:focus),
 label:hover > select:not(:focus),
 label:hover > textarea:not(:focus) {
-	box-shadow: 0 0 0 1px #a0cefe;
+	border-color: #3b99fc;
 }
 
 button[disabled],
@@ -184,12 +189,52 @@ label:hover > textarea[disabled]:hover {
 	background-color: #f5f5f5;
 	cursor: not-allowed;
 	opacity: .5;
-	box-shadow: none;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0;
 	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+input[type="checkbox"]:before,
+input[type="radio"]:before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+input[type="checkbox"] {
+	border-radius: 5px;
+}
+
+input[type="checkbox"]:before {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024"><path fill="%233b99fc" d="M832.332,140.346L952.577,241.14c7.193,6.084,8.525,17.405,2.309,24.822l-516.673,615.69 c-4.084,4.884-9.725,6.927-15.231,6.216c-3.861-0.178-7.68-1.599-10.876-4.263l-340.348-285.6 c-7.594-6.305-8.884-17.762-2.622-25.221l100.527-119.8c6.084-7.236,17.628-8.258,25.355-1.776L402.38,625.183l405.088-482.84 C814.128,134.486,824.873,134.042,832.332,140.346z"/></svg>');
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+input[type="checkbox"]:checked:before {
+	opacity: 1;
+}
+
+input[type="radio"] {
+	border-radius: 1.5em;
+	padding: 2px;
+}
+
+input[type="radio"]:before {
+	border-radius: inherit;
+	transition: background-color 0.2s;
+}
+
+input[type="radio"]:checked:before {
+	background-color: #3b99fc;
 }
 
 /* figure */
