@@ -157,6 +157,7 @@ select,
 textarea {
     border: 1px solid $gray;
     transition: border-color $transition-time;
+    -webkit-appearance: none;
 
     &:focus {
         outline: 0;
@@ -207,7 +208,6 @@ input[type="radio"] {
     margin: 0;
     background-color: $white;
     cursor: pointer;
-    -webkit-appearance: none;
     -moz-appearance: none;
 
     &:before {
@@ -244,10 +244,6 @@ input[type="radio"] {
     &:checked:before {
         background-color: $blue;
     }
-}
-
-input[type="search"] {
-    -webkit-appearance: textfield;
 }
 
 /* figure */

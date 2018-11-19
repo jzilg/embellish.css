@@ -142,6 +142,7 @@ select,
 textarea {
 	border: 1px solid #c5c5c5;
 	transition: border-color 0.2s;
+	-webkit-appearance: none;
 }
 
 input:focus,
@@ -198,7 +199,6 @@ input[type="radio"] {
 	margin: 0;
 	background-color: #fff;
 	cursor: pointer;
-	-webkit-appearance: none;
 	-moz-appearance: none;
 }
 
@@ -236,10 +236,6 @@ input[type="radio"]:before {
 
 input[type="radio"]:checked:before {
 	background-color: #3b99fc;
-}
-
-input[type="search"] {
-	-webkit-appearance: textfield;
 }
 
 /* figure */
