@@ -185,22 +185,6 @@ label:hover > textarea:not(:focus) {
     border-color: $blue;
 }
 
-button,
-input,
-select,
-textarea,
-label:hover > input,
-label:hover > select,
-label:hover > textarea {
-    &[disabled],
-    &[disabled]:hover {
-        border-color: $gray;
-        background-color: $lightgray;
-        cursor: not-allowed;
-        opacity: .5;
-    }
-}
-
 input[type="checkbox"],
 input[type="radio"] {
     width: 1.5em;
@@ -243,6 +227,22 @@ input[type="radio"] {
 
     &:checked:before {
         background-color: $blue;
+    }
+}
+
+button,
+input,
+select,
+textarea,
+label:hover > input,
+label:hover > select,
+label:hover > textarea {
+    &[disabled],
+    &[disabled]:hover {
+        border-color: $gray;
+        background-color: $lightgray;
+        cursor: not-allowed;
+        opacity: .5;
     }
 }
 

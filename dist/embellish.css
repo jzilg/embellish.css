@@ -172,26 +172,6 @@ label:hover > textarea:not(:focus) {
 	border-color: #3b99fc;
 }
 
-button[disabled],
-button[disabled]:hover,
-input[disabled],
-input[disabled]:hover,
-select[disabled],
-select[disabled]:hover,
-textarea[disabled],
-textarea[disabled]:hover,
-label:hover > input[disabled],
-label:hover > input[disabled]:hover,
-label:hover > select[disabled],
-label:hover > select[disabled]:hover,
-label:hover > textarea[disabled],
-label:hover > textarea[disabled]:hover {
-	border-color: #c5c5c5;
-	background-color: #f5f5f5;
-	cursor: not-allowed;
-	opacity: .5;
-}
-
 input[type="checkbox"],
 input[type="radio"] {
 	width: 1.5em;
@@ -236,6 +216,26 @@ input[type="radio"]:before {
 
 input[type="radio"]:checked:before {
 	background-color: #3b99fc;
+}
+
+button[disabled],
+button[disabled]:hover,
+input[disabled],
+input[disabled]:hover,
+select[disabled],
+select[disabled]:hover,
+textarea[disabled],
+textarea[disabled]:hover,
+label:hover > input[disabled],
+label:hover > input[disabled]:hover,
+label:hover > select[disabled],
+label:hover > select[disabled]:hover,
+label:hover > textarea[disabled],
+label:hover > textarea[disabled]:hover {
+	border-color: #c5c5c5;
+	background-color: #f5f5f5;
+	cursor: not-allowed;
+	opacity: .5;
 }
 
 /* figure */
