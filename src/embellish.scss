@@ -156,6 +156,7 @@ input,
 select,
 textarea {
     border: 1px solid $gray;
+    font-size: inherit;
     transition: border-color $transition-time;
     -webkit-appearance: none;
 
@@ -172,7 +173,6 @@ textarea {
     padding: .5em .625em;
     border-radius: 5px;
     font-family: inherit;
-    font-size: inherit;
     color: inherit;
 }
 
@@ -187,8 +187,8 @@ label:hover > textarea:not(:focus) {
 
 input[type="checkbox"],
 input[type="radio"] {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1em;
+    height: 1em;
     margin: 0;
     background-color: $white;
     cursor: pointer;
@@ -217,7 +217,7 @@ input[type="checkbox"] {
 }
 
 input[type="radio"] {
-    border-radius: 1.5em;
+    border-radius: 1em;
     padding: 2px;
 
     &:before {
