@@ -206,7 +206,7 @@ input[type="checkbox"]:checked:before {
 
 input[type="radio"] {
 	border-radius: 1em;
-	padding: 2px;
+	padding: .125em;
 }
 
 input[type="radio"]:before {
