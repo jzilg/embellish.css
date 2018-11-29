@@ -275,25 +275,19 @@ caption {
     font-weight: bold;
 }
 
-thead {
+th {
+    background-color: $lightgray;
     text-align: left;
 }
 
-thead tr {
-    border-bottom: 1px solid $gray;
-}
-
-tbody tr:nth-child(odd) {
-    background-color: $lightgray;
-}
-
-tbody tr:hover {
-    background-color: $gray;
+tr:hover {
+    background-color: $lightblue;
 }
 
 th,
 td {
     padding: .5em .75em;
+    border-bottom: 1px solid $gray;
 }
 
 /* dialog */

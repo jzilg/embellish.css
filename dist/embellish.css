@@ -268,25 +268,19 @@ legend {
 	font-weight: bold;
 }
 
-thead {
+th {
+	background-color: #f5f5f5;
 	text-align: left;
 }
 
-thead tr {
-	border-bottom: 1px solid #c5c5c5;
-}
-
-tbody tr:nth-child(odd) {
-	background-color: #f5f5f5;
-}
-
-tbody tr:hover {
-	background-color: #c5c5c5;
+tr:hover {
+	background-color: #a0cefe;
 }
 
 th,
 td {
 	padding: .5em .75em;
+	border-bottom: 1px solid #c5c5c5;
 }
 
 /* dialog */
