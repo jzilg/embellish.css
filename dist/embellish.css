@@ -25,7 +25,7 @@ body {
 /* anchor */
 
 a {
-	color: #3b99fc;
+	color: #3b88fd;
 }
 
 a:visited {
@@ -149,7 +149,7 @@ input:focus,
 select:focus,
 textarea:focus {
 	outline: 0;
-	border-color: #3b99fc;
+	border-color: #3b88fd;
 	box-shadow: 0 0 0 2px #a0cefe;
 }
 
@@ -168,7 +168,7 @@ textarea:not(:focus):hover,
 label:hover > input:not(:focus),
 label:hover > select:not(:focus),
 label:hover > textarea:not(:focus) {
-	border-color: #3b99fc;
+	border-color: #3b88fd;
 }
 
 input[type="checkbox"],
@@ -214,7 +214,7 @@ input[type="radio"]:before {
 }
 
 input[type="radio"]:checked:before {
-	background-color: #3b99fc;
+	background-color: #3b88fd;
 }
 
 button[disabled],
