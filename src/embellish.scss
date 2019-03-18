@@ -129,6 +129,10 @@ button {
         border-color: $darkgray;
         box-shadow: inset 0 .15em .3em $gray;
     }
+
+    &[disabled] {
+        box-shadow: none;
+    }
 }
 
 select {
