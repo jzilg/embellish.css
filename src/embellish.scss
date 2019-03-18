@@ -102,10 +102,10 @@ button,
 }
 
 button {
-    padding: .5em 1.25em;
+    padding: .5em 1em;
     background-color: $lightgray;
     border: 1px solid $gray;
-    border-radius: 2em;
+    border-radius: 5px;
     font-family: inherit;
     font-size: inherit;
     transition: border-color $transition-time, background-color $transition-time;

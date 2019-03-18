@@ -87,10 +87,10 @@ button,
 }
 
 button {
-	padding: .5em 1.25em;
+	padding: .5em 1em;
 	background-color: #f5f5f5;
 	border: 1px solid #c5c5c5;
-	border-radius: 2em;
+	border-radius: 5px;
 	font-family: inherit;
 	font-size: inherit;
 	transition: border-color 0.2s, background-color 0.2s;
