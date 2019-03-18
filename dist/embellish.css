@@ -93,6 +93,7 @@ button {
 	border-radius: 5px;
 	font-family: inherit;
 	font-size: inherit;
+	color: inherit;
 	transition: border-color 0.2s, background-color 0.2s;
 }
 

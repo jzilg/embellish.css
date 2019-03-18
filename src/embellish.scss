@@ -108,6 +108,7 @@ button {
     border-radius: 5px;
     font-family: inherit;
     font-size: inherit;
+    color: inherit;
     transition: border-color $transition-time, background-color $transition-time;
 
     &::-moz-focus-inner {
