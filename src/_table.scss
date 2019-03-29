@@ -4,9 +4,7 @@
 
 table {
     max-width: 100%;
-    border-collapse: collapse;
     border-spacing: 0;
-    background-color: #fff;
     border: 1px solid $gray;
 }
 
@@ -16,11 +14,6 @@ caption {
     font-weight: bold;
 }
 
-th {
-    background-color: $lightgray;
-    text-align: left;
-}
-
 tr:hover {
     background-color: $lightblue;
 }
@@ -28,5 +21,13 @@ tr:hover {
 th,
 td {
     padding: .5em .75em;
-    border-bottom: 1px solid $gray;
+}
+
+th {
+    background-color: $lightgray;
+    text-align: left;
+}
+
+td {
+    border-top: 1px solid $gray;
 }

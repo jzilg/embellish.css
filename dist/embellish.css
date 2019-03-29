@@ -332,9 +332,7 @@ img {
 
 table {
 	max-width: 100%;
-	border-collapse: collapse;
 	border-spacing: 0;
-	background-color: #fff;
 	border: 1px solid #c5c5c5;
 }
 
@@ -345,11 +343,6 @@ legend {
 	font-weight: bold;
 }
 
-th {
-	background-color: #f5f5f5;
-	text-align: left;
-}
-
 tr:hover {
 	background-color: #a0cefe;
 }
@@ -357,7 +350,15 @@ tr:hover {
 th,
 td {
 	padding: .5em .75em;
-	border-bottom: 1px solid #c5c5c5;
+}
+
+th {
+	background-color: #f5f5f5;
+	text-align: left;
+}
+
+td {
+	border-top: 1px solid #c5c5c5;
 }
 
 /* dialog */
