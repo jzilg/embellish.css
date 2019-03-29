@@ -4,30 +4,44 @@
 
 /* form */
 
+/**
+ * 1. remove default styling from fieldset
+ */
+
 fieldset {
-    margin: 0;
-    padding: 0;
-    border-width: 0;
+    margin: 0; /* 1 */
+    padding: 0; /* 1 */
+    border-width: 0; /* 1 */
 
     & + & {
         margin-top: 1em;
     }
 }
 
+/**
+ * 1. remove padding from legend
+ */
+
 legend {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 0; /* 1 */
+    padding-left: 0; /* 1 */
 
     @extend caption;
 }
 
+/*
+ * 1. a select is clickable like an anchor, so show the same cursor
+ * 2. remove the inner dotted line in Firefox
+ * 3. remove browser own select style
+ */
+
 select {
-    cursor: pointer;
+    cursor: pointer; /* 1 */
     background-color: $white;
 
     &:-moz-focusring {
-        color: transparent;
-        text-shadow: 0 0 0 $black;
+        color: transparent; /* 2 */
+        text-shadow: 0 0 0 $black; /* 2 */
     }
 
     &:not([multiple]):not([size]) {
@@ -36,17 +50,22 @@ select {
         background-repeat: no-repeat;
         background-position: right .5em center;
         background-size: .813em .5em;
-        -moz-appearance: none;
+        -moz-appearance: none; /* 3 */
     }
 }
+
+/*
+ * 1. apply font style of parent/root element
+ * 2. remove browser own select style
+ */
 
 input,
 select,
 textarea {
     border: 1px solid $gray;
-    font-size: inherit;
+    font-size: inherit; /* 1 */
     transition: border-color $transition-time;
-    -webkit-appearance: none;
+    -webkit-appearance: none; /* 2 */
 
     &:focus {
         outline: 0;
@@ -55,13 +74,17 @@ textarea {
     }
 }
 
+/*
+ * 1. apply font style of parent/root element
+ */
+
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
     padding: .5em .625em;
     border-radius: 5px;
-    font-family: inherit;
-    color: inherit;
+    font-family: inherit; /* 1 */
+    color: inherit; /* 1 */
 }
 
 input:not(:focus):hover,
@@ -116,6 +139,29 @@ input[type="radio"] {
     &:checked:before {
         background-color: $blue;
     }
+}
+
+/*
+ * 1. remove browser own select style
+ * 2. fixing the height of the input in Safari by remoeving the delete cancel
+ *    button
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none; /* 2 */
+    }
+}
+
+/*
+ * 1. remove yellow background-color from autocomplete inputs in Chrome
+ */
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 99em #fff inset; /* 1 */
 }
 
 button,

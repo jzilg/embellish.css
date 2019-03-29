@@ -1,8 +1,13 @@
 /* root */
 
+/**
+ * 1. prevent adjustments of font size after orientation changes in iOS
+ * 2. remove gray highlight when tapping elements in iOS
+ */
+
 html {
-	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: 100%; /* 1 */
+	-webkit-tap-highlight-color: transparent; /* 2 */
 }
 
 /**
@@ -38,15 +43,19 @@ a:active {
 
 /* address */
 
+/**
+ * 1. set font-style of address from italic to normal
+ */
+
 address {
-	font-style: normal;
+	font-style: normal; /* 1 */
 }
 
 /* code */
 
 code {
 	padding: .188em;
-	background-color: #ededed;
+	background-color: #f5f5f5;
 	color: #757575;
 }
 
@@ -57,25 +66,39 @@ pre code {
 
 /* horizontal ruler */
 
+/*
+ * 1. set border-style to solid;
+ *    set border-bottom-style to none to set height to 1px
+ */
+
 hr {
 	margin-top: 2em;
 	margin-bottom: 2em;
-	border-style: solid solid none;
+	border-style: solid solid none; /* 1 */
 	border-color: #c5c5c5;
 }
 
+/**
+ * 1. a button, or any element that behaves like one, is clickable like an
+ *    anchor, so show the same cursor
+ */
+
 button,
 [role="button"] {
-	cursor: pointer;
+	cursor: pointer; /* 1 */
 }
+
+/**
+ * 1. apply font style of parent/root element
+ */
 
 button {
 	padding: .5em 1em;
-	background-color: #ededed;
+	background-color: #f5f5f5;
 	border: 1px solid #c5c5c5;
 	border-radius: 5px;
-	font-family: inherit;
-	font-size: inherit;
+	font-family: inherit; /* 1 */
+	font-size: inherit; /* 1 */
 	color: inherit;
 	transition: border-color 0.2s, background-color 0.2s;
 }
@@ -107,29 +130,43 @@ button[disabled] {
 
 /* form */
 
+/**
+ * 1. remove default styling from fieldset
+ */
+
 fieldset {
-	margin: 0;
-	padding: 0;
-	border-width: 0;
+	margin: 0; /* 1 */
+	padding: 0; /* 1 */
+	border-width: 0; /* 1 */
 }
 
 fieldset + fieldset {
 	margin-top: 1em;
 }
 
+/**
+ * 1. remove padding from legend
+ */
+
 legend {
-	padding-right: 0;
-	padding-left: 0;
+	padding-right: 0; /* 1 */
+	padding-left: 0; /* 1 */
 }
 
+/*
+ * 1. a select is clickable like an anchor, so show the same cursor
+ * 2. remove the inner dotted line in Firefox
+ * 3. remove browser own select style
+ */
+
 select {
-	cursor: pointer;
+	cursor: pointer; /* 1 */
 	background-color: #fff;
 }
 
 select:-moz-focusring {
-	color: transparent;
-	text-shadow: 0 0 0 #333;
+	color: transparent; /* 2 */
+	text-shadow: 0 0 0 #333; /* 2 */
 }
 
 select:not([multiple]):not([size]) {
@@ -138,16 +175,21 @@ select:not([multiple]):not([size]) {
 	background-repeat: no-repeat;
 	background-position: right .5em center;
 	background-size: .813em .5em;
-	-moz-appearance: none;
+	-moz-appearance: none; /* 3 */
 }
+
+/*
+ * 1. apply font style of parent/root element
+ * 2. remove browser own select style
+ */
 
 input,
 select,
 textarea {
 	border: 1px solid #c5c5c5;
-	font-size: inherit;
+	font-size: inherit; /* 1 */
 	transition: border-color 0.2s;
-	-webkit-appearance: none;
+	-webkit-appearance: none; /* 2 */
 }
 
 input:focus,
@@ -158,13 +200,17 @@ textarea:focus {
 	box-shadow: 0 0 0 2px #a0cefe;
 }
 
+/*
+ * 1. apply font style of parent/root element
+ */
+
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
 	padding: .5em .625em;
 	border-radius: 5px;
-	font-family: inherit;
-	color: inherit;
+	font-family: inherit; /* 1 */
+	color: inherit; /* 1 */
 }
 
 input:not(:focus):hover,
@@ -222,6 +268,29 @@ input[type="radio"]:checked:before {
 	background-color: #3b88fd;
 }
 
+/*
+ * 1. remove browser own select style
+ * 2. fixing the height of the input in Safari by remoeving the delete cancel
+ *    button
+ */
+
+input[type="search"] {
+	-webkit-appearance: textfield; /* 1 */
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none; /* 2 */
+}
+
+/*
+ * 1. remove yellow background-color from autocomplete inputs in Chrome
+ */
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 99em #fff inset; /* 1 */
+}
+
 button[disabled],
 button[disabled]:hover,
 input[disabled],
@@ -237,7 +306,7 @@ label:hover > select[disabled]:hover,
 label:hover > textarea[disabled],
 label:hover > textarea[disabled]:hover {
 	border-color: #c5c5c5;
-	background-color: #ededed;
+	background-color: #f5f5f5;
 	cursor: not-allowed;
 	opacity: .5;
 }
@@ -251,8 +320,12 @@ figure {
 
 /* image */
 
+/**
+ * 1. make image scalable if viewport < img width
+ */
+
 img {
-	max-width: 100%;
+	max-width: 100%; /* 1 */
 }
 
 /* table */
@@ -273,7 +346,7 @@ legend {
 }
 
 th {
-	background-color: #ededed;
+	background-color: #f5f5f5;
 	text-align: left;
 }
 

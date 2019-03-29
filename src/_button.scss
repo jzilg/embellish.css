@@ -1,17 +1,26 @@
 @import "config";
 
+/**
+ * 1. a button, or any element that behaves like one, is clickable like an
+ *    anchor, so show the same cursor
+ */
+
 button,
 [role="button"] {
-    cursor: pointer;
+    cursor: pointer; /* 1 */
 }
+
+/**
+ * 1. apply font style of parent/root element
+ */
 
 button {
     padding: .5em 1em;
     background-color: $lightgray;
     border: 1px solid $gray;
     border-radius: 5px;
-    font-family: inherit;
-    font-size: inherit;
+    font-family: inherit; /* 1 */
+    font-size: inherit; /* 1 */
     color: inherit;
     transition: border-color $transition-time, background-color $transition-time;
 

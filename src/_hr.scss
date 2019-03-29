@@ -2,9 +2,14 @@
 
 /* horizontal ruler */
 
+/*
+ * 1. set border-style to solid;
+ *    set border-bottom-style to none to set height to 1px
+ */
+
 hr {
     margin-top: 2em;
     margin-bottom: 2em;
-    border-style: solid solid none;
+    border-style: solid solid none; /* 1 */
     border-color: $gray;
 }

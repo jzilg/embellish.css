@@ -7,6 +7,10 @@ figure {
 
 /* image */
 
+/**
+ * 1. make image scalable if viewport < img width
+ */
+
 img {
-    max-width: 100%;
+    max-width: 100%; /* 1 */
 }

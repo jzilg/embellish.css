@@ -1,5 +1,9 @@
 /* address */
 
+/**
+ * 1. set font-style of address from italic to normal
+ */
+
 address {
-    font-style: normal;
+    font-style: normal; /* 1 */
 }
