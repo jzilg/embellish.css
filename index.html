@@ -291,6 +291,23 @@
     </script>
     <hr>
     <h2>Progress Bar</h2>
-    <progress max="100" value="38"></progress>
+    <progress max="100" value="0"></progress>
+    <span id="progress-number">0</span>%
+    <script>
+        const progressNumberElement = document.getElementById('progress-number')
+        const progressElement = document.getElementsByTagName('progress')[0]
+        let progress = 0
+
+        function simulateProgress() {
+            if (progress > 100) {
+                progress = 0
+            }
+            progressElement.value = progress
+            progressNumberElement.innerText = progress
+            progress++
+        }
+
+        setInterval(simulateProgress, 150)
+    </script>
 </body>
 </html>
