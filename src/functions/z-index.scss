@@ -1,0 +1,12 @@
+$elements: (
+    elm1: 2,
+    elm0: 1,
+);
+
+@function z-index-for($element) {
+    $z-index: map-get($elements, $element);
+    @if $z-index == null {
+        @error "no z-index for " + $element;
+    }
+    @return $z-index;
+}
