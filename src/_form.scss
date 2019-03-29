@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 @import "config";
 
 /* form */
@@ -13,9 +15,10 @@ fieldset {
 }
 
 legend {
-    @extend caption;
     padding-right: 0;
     padding-left: 0;
+
+    @extend caption;
 }
 
 select {
@@ -34,7 +37,6 @@ select {
         background-position: right .5em center;
         background-size: .813em .5em;
         -moz-appearance: none;
-        -webkit-appearance: none;
     }
 }
 

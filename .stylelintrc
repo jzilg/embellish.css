@@ -4,14 +4,6 @@
     "stylelint-config-recommended-scss"
   ],
   "rules": {
-    "at-rule-empty-line-before": [
-      "always", {
-        "except": [
-          "after-same-name",
-          "inside-block"
-        ]
-      }
-    ],
     "block-closing-brace-newline-after": [
       "always", {
         "ignoreAtRules": [
