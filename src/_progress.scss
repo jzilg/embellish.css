@@ -1,0 +1,24 @@
+@import "config";
+
+// progress
+
+$bgColor: $lightgray;
+$valueColor: $blue;
+
+progress {
+    height: .75em;
+    border-width: 0;
+    background-color: $bgColor;
+
+    &::-webkit-progress-bar {
+        background-color: $bgColor;
+    }
+
+    &::-webkit-progress-value {
+        background-color: $valueColor;
+    }
+
+    &::-moz-progress-bar {
+        background-color: $valueColor;
+    }
+}
