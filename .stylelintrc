@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss"
+  ],
+  "rules": {
+    "at-rule-empty-line-before": [
+      "always", {
+        "except": [
+          "after-same-name",
+          "inside-block"
+        ]
+      }
+    ],
+    "block-closing-brace-newline-after": [
+      "always", {
+        "ignoreAtRules": [
+          "else",
+          "if"
+        ]
+      }
+    ],
+    "font-family-name-quotes": "always-where-recommended",
+    "indentation": 4,
+    "number-leading-zero": "never",
+    "max-nesting-depth": 1,
+    "selector-attribute-quotes": "always",
+    "selector-max-id": 0,
+    "selector-pseudo-element-colon-notation": "single",
+    "string-quotes": "double"
+  }
+}

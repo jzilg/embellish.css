@@ -4,18 +4,24 @@ const cmq = require('gulp-merge-media-queries')
 const prefix = require('gulp-autoprefixer')
 const minifyCSS = require('gulp-cssnano')
 const rename = require('gulp-rename')
+const stylelint = require('gulp-stylelint')
 
 const srcFiles = './src/*.scss'
 const distDir = 'dist'
 
 const buildCSS = () => gulp.src(srcFiles)
+    .pipe(stylelint({
+        reporters: [
+            { formatter: 'string', console: true }
+        ]
+    }))
     .pipe(sass()).on('error', console.error.bind(console))
     .pipe(prefix())
     .pipe(cmq())
     .pipe(gulp.dest(distDir))
     .pipe(minifyCSS())
     .pipe(rename({
-        suffix: ".min",
+        suffix: '.min',
     }))
     .pipe(gulp.dest(distDir))
 
