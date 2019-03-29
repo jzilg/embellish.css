@@ -1,3 +1,4 @@
+// colors
 $black: #333;
 $white: #fff;
 $darkgray: #757575;
@@ -8,4 +9,25 @@ $blue: #3b88fd;
 $lightblue: #a0cefe;
 $orange: #fc642d;
 
+// transition-time
 $transition-time: .2s;
+
+// Media Queries
+
+// Breakpoints
+$lg-width: 1200px;
+$md-width: 768px;
+$sm-width: 480px;
+
+// Queries
+$media-lg: "only screen and (min-width: #{$lg-width})";
+$media-md: "only screen and (min-width: #{$md-width})";
+$media-sm: "@media only screen and (min-width: #{$sm-width})";
+
+$media-lg-only: $media-lg;
+$media-md-only: "only screen and (min-width: #{$md-width}) and (max-width: #{($lg-width - 1px)})";
+$media-sm-only: "only screen and (min-width: #{$sm-width}) and (max-width: #{($md-width - 1px)})";
+$media-xs-only: "only screen and (max-width: #{($sm-width - 1px)})";
+
+// qhd
+$media-qhd: "only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)";
