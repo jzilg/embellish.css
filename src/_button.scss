@@ -1,0 +1,40 @@
+@import "config";
+
+button,
+[role="button"] {
+    cursor: pointer;
+}
+
+button {
+    padding: .5em 1em;
+    background-color: $lightgray;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    transition: border-color $transition-time, background-color $transition-time;
+
+    &::-moz-focus-inner {
+        border-width: 0;
+    }
+
+    &:hover {
+        border-color: $darkgray;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: $darkgray;
+        box-shadow: 0 0 0 2px $lightblue;
+    }
+
+    &:active {
+        border-color: $darkgray;
+        box-shadow: inset 0 .15em .3em $gray;
+    }
+
+    &[disabled] {
+        box-shadow: none;
+    }
+}

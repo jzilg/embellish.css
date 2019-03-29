@@ -1,0 +1,133 @@
+@import "config";
+
+/* form */
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+
+    & + & {
+        margin-top: 1em;
+    }
+}
+
+legend {
+    @extend caption;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+select {
+    cursor: pointer;
+    background-color: $white;
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 $black;
+    }
+
+    &:not([multiple]):not([size]) {
+        padding-right: 1.75em;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 49.6"><path fill="%23999" d="M42.4 49.6c-.7 0-1.4-.3-2-.9L.8 9C.2 8.5 0 7.9 0 7.2s.2-1.4.8-2L5 .9C5.6.3 6.3 0 7 0s1.4.3 2 .9l33.4 33.4L76 .9c.5-.6 1.2-.9 1.9-.9s1.4.3 2 .9l4.3 4.3c.6.5.9 1.2.9 2s-.4 1.4-1 1.8L44.4 48.7c-.5.6-1.1.9-2 .9z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right .5em center;
+        background-size: .813em .5em;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+    }
+}
+
+input,
+select,
+textarea {
+    border: 1px solid $gray;
+    font-size: inherit;
+    transition: border-color $transition-time;
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: 0;
+        border-color: $blue;
+        box-shadow: 0 0 0 2px $lightblue;
+    }
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    padding: .5em .625em;
+    border-radius: 5px;
+    font-family: inherit;
+    color: inherit;
+}
+
+input:not(:focus):hover,
+select:not(:focus):hover,
+textarea:not(:focus):hover,
+label:hover > input:not(:focus),
+label:hover > select:not(:focus),
+label:hover > textarea:not(:focus) {
+    border-color: $blue;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    background-color: $white;
+    cursor: pointer;
+    -moz-appearance: none;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+input[type="checkbox"] {
+    border-radius: 5px;
+
+    &:before {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024"><path fill="%233b99fc" d="M832.332,140.346L952.577,241.14c7.193,6.084,8.525,17.405,2.309,24.822l-516.673,615.69 c-4.084,4.884-9.725,6.927-15.231,6.216c-3.861-0.178-7.68-1.599-10.876-4.263l-340.348-285.6 c-7.594-6.305-8.884-17.762-2.622-25.221l100.527-119.8c6.084-7.236,17.628-8.258,25.355-1.776L402.38,625.183l405.088-482.84 C814.128,134.486,824.873,134.042,832.332,140.346z"/></svg>');
+        opacity: 0;
+        transition: opacity $transition-time;
+    }
+
+    &:checked:before {
+        opacity: 1;
+    }
+}
+
+input[type="radio"] {
+    border-radius: 1em;
+    padding: .125em;
+
+    &:before {
+        border-radius: inherit;
+        transition: background-color $transition-time;
+    }
+
+    &:checked:before {
+        background-color: $blue;
+    }
+}
+
+button,
+input,
+select,
+textarea,
+label:hover > input,
+label:hover > select,
+label:hover > textarea {
+    &[disabled],
+    &[disabled]:hover {
+        border-color: $gray;
+        background-color: $lightgray;
+        cursor: not-allowed;
+        opacity: .5;
+    }
+}

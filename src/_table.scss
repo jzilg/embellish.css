@@ -1,0 +1,32 @@
+@import "config";
+
+/* table */
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+    border: 1px solid $gray;
+}
+
+caption {
+    margin-bottom: 1em;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+th {
+    background-color: $lightgray;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: $lightblue;
+}
+
+th,
+td {
+    padding: .5em .75em;
+    border-bottom: 1px solid $gray;
+}

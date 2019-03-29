@@ -1,0 +1,15 @@
+@import "config";
+
+/* anchor */
+
+a {
+    color: $blue;
+
+    &:visited {
+        color: $darkblue;
+    }
+
+    &:active {
+        color: $orange;
+    }
+}

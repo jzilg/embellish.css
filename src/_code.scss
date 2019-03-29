@@ -1,0 +1,14 @@
+@import "config";
+
+/* code */
+
+code {
+    padding: .188em;
+    background-color: $lightgray;
+    color: $darkgray;
+}
+
+pre code {
+    display: block;
+    line-height: 1.5;
+}
