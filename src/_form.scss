@@ -156,6 +156,10 @@ input[type="search"] {
     }
 }
 
+input[type="date"] {
+    cursor: pointer;
+}
+
 /*
  * 1. remove yellow background-color from autocomplete inputs in Chrome
  */
