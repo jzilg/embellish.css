@@ -4,12 +4,12 @@
 
 code {
     padding: .188em;
-    background-color: $lightgray;
-    color: $darkgray;
+    background-color: var(--lightgray);
+    color: var(--darkgray);
 }
 
 pre code {
     display: block;
-    border-left: 2px solid $blue;
+    border-left: 2px solid var(--blue);
     line-height: 1.5;
 }

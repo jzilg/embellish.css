@@ -3,13 +3,13 @@
 /* anchor */
 
 a {
-    color: $blue;
+    color: var(--blue);
 
     &:visited {
-        color: $darkblue;
+        color: var(--darkblue);
     }
 
     &:active {
-        color: $orange;
+        color: var(--orange);
     }
 }

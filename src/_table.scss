@@ -5,7 +5,7 @@
 table {
     max-width: 100%;
     border-spacing: 0;
-    border: 1px solid $gray;
+    border: 1px solid var(--gray);
 }
 
 caption {
@@ -15,7 +15,7 @@ caption {
 }
 
 tr:hover {
-    background-color: $lightblue;
+    background-color: var(--lightblue);
 }
 
 th,
@@ -24,10 +24,10 @@ td {
 }
 
 th {
-    background-color: $lightgray;
+    background-color: var(--lightgray);
     text-align: left;
 }
 
 td {
-    border-top: 1px solid $gray;
+    border-top: 1px solid var(--gray);
 }

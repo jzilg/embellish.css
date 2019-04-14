@@ -11,5 +11,5 @@ hr {
     margin-top: 2em;
     margin-bottom: 2em;
     border-style: solid solid none; /* 1 */
-    border-color: $gray;
+    border-color: var(--gray);
 }

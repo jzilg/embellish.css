@@ -2,8 +2,8 @@
 
 // progress
 
-$bgColor: $lightgray;
-$valueColor: $blue;
+$bgColor: var(--lightgray);
+$valueColor: var(--blue);
 
 progress {
     height: 1em;
