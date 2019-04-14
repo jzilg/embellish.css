@@ -347,7 +347,6 @@ img {
 table {
 	max-width: 100%;
 	border-spacing: 0;
-	border: 1px solid var(--gray);
 }
 
 caption,
@@ -357,8 +356,8 @@ legend {
 	font-weight: bold;
 }
 
-tr:hover {
-	background-color: var(--lightblue);
+tbody > tr:hover {
+	background-color: var(--lightgray);
 }
 
 th,
@@ -367,7 +366,6 @@ td {
 }
 
 th {
-	background-color: var(--lightgray);
 	text-align: left;
 }
 
