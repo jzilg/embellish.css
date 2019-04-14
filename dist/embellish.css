@@ -61,6 +61,7 @@ code {
 
 pre code {
 	display: block;
+	border-left: 2px solid #3b88fd;
 	line-height: 1.5;
 }
 
