@@ -13,6 +13,12 @@
 	--transition-time: .2s;
 }
 
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
 /**
  * 1. prevent adjustments of font size after orientation changes in iOS
  * 2. remove gray highlight when tapping elements in iOS
