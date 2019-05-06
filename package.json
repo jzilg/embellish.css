@@ -6,7 +6,8 @@
   "style": "embellish.css",
   "files": [
     "LICENSE",
-    "dist/embellish.css"
+    "README.md",
+    "embellish.css"
   ],
   "scripts": {
     "gulp": "gulp"

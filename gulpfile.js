@@ -7,7 +7,7 @@ const rename = require('gulp-rename')
 const stylelint = require('gulp-stylelint')
 
 const srcFiles = './src/*.scss'
-const distDir = 'dist'
+const distDir = './'
 
 const buildCSS = () => gulp.src(srcFiles)
     .pipe(stylelint({

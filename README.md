@@ -14,9 +14,9 @@ npm install embellish.css
 
 ### CDN
 ```html
-<link rel="stylesheet" href="https://gitcdn.xyz/repo/jzilg/embellish.css/master/dist/embellish.min.css" />
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/jzilg/embellish.css/master/embellish.min.css" />
 ```
 
 ### Download
-* Develop: https://raw.githubusercontent.com/jzilg/embellish.css/master/dist/embellish.css
-* Production: https://raw.githubusercontent.com/jzilg/embellish.css/master/dist/embellish.min.css
+* Develop: https://raw.githubusercontent.com/jzilg/embellish.css/master/embellish.css
+* Production: https://raw.githubusercontent.com/jzilg/embellish.css/master/embellish.min.css
