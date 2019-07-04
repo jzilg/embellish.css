@@ -201,8 +201,8 @@ select:not([multiple]):not([size]) {
 
 /*
  * 1. apply font style of parent/root element
- * 2. remove browser own select style
- * 3. remove firefox style if input is invalid
+ * 2. remove browser own input style
+ * 3. remove Firefox style if input is invalid
  */
 
 input,
