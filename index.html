@@ -103,7 +103,7 @@
             </label>
             <label>
                 <span>Password</span>
-                <input type="password">
+                <input type="password" placeholder="Password with at least 6 characters" required minlength="6">
             </label>
             <label>
                 <span>Search</span>
@@ -126,7 +126,7 @@
             <legend>Select</legend>
             <label>
                 <span>Select</span>
-                <select>
+                <select required>
                     <option disabled selected>Select</option>
                     <option>Option I</option>
                     <option>Option II</option>
@@ -135,7 +135,7 @@
             </label>
             <label>
                 <span>multiple Select</span>
-                <select multiple>
+                <select multiple required>
                     <option disabled selected>multiple Select</option>
                     <option>Option I</option>
                     <option>Option II</option>
@@ -165,7 +165,7 @@
             <legend>Textarea</legend>
             <label>
                 <span>Textfeld</span>
-                <textarea></textarea>
+                <textarea required></textarea>
             </label>
             <label>
                 <span>Textfeld (disabled)</span>
@@ -175,7 +175,7 @@
         <fieldset>
             <legend>Radio &amp; Checkbox</legend>
             <label>
-                <input type="radio" name="radio" value="0">
+                <input type="radio" name="radio" value="0" required>
                 <span>Radiobutton I</span>
             </label>
             <label>
@@ -183,7 +183,7 @@
                 <span>Radiobutton II</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" required>
                 <span>Checkbox</span>
             </label>
             <label>

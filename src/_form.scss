@@ -57,6 +57,7 @@ select {
 /*
  * 1. apply font style of parent/root element
  * 2. remove browser own select style
+ * 3. remove firefox style if input is invalid
  */
 
 input,
@@ -71,6 +72,10 @@ textarea {
         outline: 0;
         border-color: var(--blue);
         box-shadow: 0 0 0 2px var(--lightblue);
+    }
+
+    &:not(:focus):-moz-ui-invalid {
+        box-shadow: none; /* 3 */
     }
 }
 
