@@ -16,7 +16,7 @@
         const linkElement = document.head.querySelector('link')
         let linkElementIsInHeader = true
 
-        const toggleStyle = () => {
+        function toggleStyle() {
             if (linkElementIsInHeader) {
                 linkElement.parentNode.removeChild(linkElement)
                 linkElementIsInHeader = false
