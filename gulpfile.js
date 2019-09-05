@@ -2,7 +2,7 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const cmq = require('gulp-merge-media-queries')
 const prefix = require('gulp-autoprefixer')
-const minifyCSS = require('gulp-cssnano')
+const minifyCSS = require('gulp-clean-css')
 const rename = require('gulp-rename')
 const stylelint = require('gulp-stylelint')
 
