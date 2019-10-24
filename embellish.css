@@ -76,7 +76,6 @@ address {
 code {
 	padding: .188em;
 	background-color: var(--lightgray);
-	color: var(--darkgray);
 }
 
 pre code {
