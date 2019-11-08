@@ -6,7 +6,8 @@
  */
 
 button,
-[role="button"] {
+[role="button"],
+[type="button"] {
     cursor: pointer; /* 1 */
 }
 
