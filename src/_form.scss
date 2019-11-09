@@ -79,7 +79,7 @@ textarea {
  * 1. apply font style of parent/root element
  */
 
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]),
 select,
 textarea {
     padding: .5em .625em;

@@ -15,7 +15,8 @@ button,
  * 1. apply font style of parent/root element
  */
 
-button {
+button,
+[type="button"] {
     padding: .5em 1em;
     background-color: var(--lightgray);
     border: 1px solid var(--gray);

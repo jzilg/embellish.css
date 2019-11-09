@@ -113,7 +113,8 @@ button,
  * 1. apply font style of parent/root element
  */
 
-button {
+button,
+[type="button"] {
 	padding: .5em 1em;
 	background-color: var(--lightgray);
 	border: 1px solid var(--gray);
@@ -124,26 +125,31 @@ button {
 	transition: border-color var(--transition-time), background-color var(--transition-time);
 }
 
-button::-moz-focus-inner {
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner {
 	border-width: 0;
 }
 
-button:hover {
+button:hover,
+[type="button"]:hover {
 	border-color: var(--darkgray);
 }
 
-button:focus {
+button:focus,
+[type="button"]:focus {
 	outline: 0;
 	border-color: var(--darkgray);
 	box-shadow: 0 0 0 2px var(--lightblue);
 }
 
-button:active {
+button:active,
+[type="button"]:active {
 	border-color: var(--darkgray);
 	box-shadow: inset 0 0.15em 0.3em var(--gray);
 }
 
-button[disabled] {
+button[disabled],
+[type="button"][disabled] {
 	box-shadow: none;
 }
 
@@ -228,7 +234,7 @@ textarea:not(:focus):-moz-ui-invalid {
  * 1. apply font style of parent/root element
  */
 
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]),
 select,
 textarea {
 	padding: .5em .625em;
