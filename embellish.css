@@ -207,7 +207,7 @@ select:not([multiple]):not([size]) {
  * 3. remove Firefox style if input is invalid
  */
 
-input,
+input:not([type="button"]),
 select,
 textarea {
 	border: 1px solid var(--gray);
@@ -216,7 +216,7 @@ textarea {
 	-webkit-appearance: none; /* 2 */
 }
 
-input:focus,
+input:not([type="button"]):focus,
 select:focus,
 textarea:focus {
 	outline: 0;
@@ -224,7 +224,7 @@ textarea:focus {
 	box-shadow: 0 0 0 2px var(--lightblue);
 }
 
-input:not(:focus):-moz-ui-invalid,
+input:not([type="button"]):not(:focus):-moz-ui-invalid,
 select:not(:focus):-moz-ui-invalid,
 textarea:not(:focus):-moz-ui-invalid {
 	box-shadow: none; /* 3 */
@@ -243,7 +243,7 @@ textarea {
 	color: inherit; /* 1 */
 }
 
-input:not(:focus):hover,
+input:not([type="button"]):not(:focus):hover,
 select:not(:focus):hover,
 textarea:not(:focus):hover,
 label:hover > input:not(:focus),
