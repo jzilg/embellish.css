@@ -11,6 +11,7 @@
 	--lightblue: #a0cefe;
 	--orange: #fc642d;
 	--transition-time: .2s;
+	--focus-border-style: 0 0 0 2px var(--lightblue);
 }
 
 *,
@@ -139,7 +140,7 @@ button:focus,
 [type="button"]:focus {
 	outline: 0;
 	border-color: var(--darkgray);
-	box-shadow: 0 0 0 2px var(--lightblue);
+	box-shadow: var(--focus-border-style);
 }
 
 button:active,
@@ -221,7 +222,7 @@ select:focus,
 textarea:focus {
 	outline: 0;
 	border-color: var(--blue);
-	box-shadow: 0 0 0 2px var(--lightblue);
+	box-shadow: var(--focus-border-style);
 }
 
 input:not([type="button"]):not(:focus):-moz-ui-invalid,
