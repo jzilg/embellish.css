@@ -62,6 +62,12 @@ a:active {
 	color: var(--orange);
 }
 
+a:focus {
+	outline: 0;
+	box-shadow: var(--focus-border-style);
+	border-radius: 2px;
+}
+
 /* address */
 
 /**

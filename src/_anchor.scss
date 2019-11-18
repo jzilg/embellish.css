@@ -12,4 +12,10 @@ a {
     &:active {
         color: var(--orange);
     }
+
+    &:focus {
+        outline: 0;
+        box-shadow: var(--focus-border-style);
+        border-radius: 2px;
+    }
 }
