@@ -10,23 +10,38 @@
 <body>
     <h1>HTML Demo Page</h1>
     <p>A Test Page for all convinent HTML Elements</p>
-    <button id="style-toggle-btn" type="button">Toggle embellish.css</button>
+    <button class="style-toggle-btn" data-framework-id="embelish" type="button">embellish.css</button>
+    <button class="style-toggle-btn" data-framework-id="bootstrap" type="button">bootstrap</button>
+    <button class="style-toggle-btn" data-framework-id="foundation" type="button">foundation</button>
+    <button class="style-toggle-btn" data-framework-id="milligram" type="button">milligram</button>
     <script>
-        const styleToggleBtn = document.getElementById('style-toggle-btn')
         const linkElement = document.head.querySelector('link')
-        let linkElementIsInHeader = true
 
-        function toggleStyle() {
-            if (linkElementIsInHeader) {
-                linkElement.parentNode.removeChild(linkElement)
-                linkElementIsInHeader = false
-            } else {
-                document.head.appendChild(linkElement)
-                linkElementIsInHeader = true
-            }
+        const frameworkUrls = {
+            embelish: 'embellish.css',
+            bootstrap: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+            foundation: 'https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css',
+            milligram: 'https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css',
         }
 
-        styleToggleBtn.addEventListener('click', toggleStyle)
+        const toggleButtons = document.querySelectorAll('.style-toggle-btn')
+
+        toggleButtons.forEach((toggleButton) => {
+            const frameworkId = toggleButton.getAttribute('data-framework-id')
+            toggleButton.addEventListener('click', toggleStyle.bind(null, frameworkId))
+        })
+
+        function toggleStyle(frameworkId) {
+            const activeFrameworkUrl = linkElement.getAttribute('href')
+            const targetFrameworkUrl = frameworkUrls[frameworkId]
+            const frameworkIsActive = activeFrameworkUrl === targetFrameworkUrl
+
+            if (frameworkIsActive) {
+                linkElement.setAttribute('href', '')
+            } else {
+                linkElement.setAttribute('href', targetFrameworkUrl)
+            }
+        }
     </script>
     <h2>Text</h2>
     <h3>Paragraphs of text</h3>
