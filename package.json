@@ -10,7 +10,9 @@
     "embellish.css"
   ],
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "lint": "stylelint src/**/*.scss",
+    "lint-fix": "stylelint --fix src/**/*.scss"
   },
   "repository": {
     "type": "git",
