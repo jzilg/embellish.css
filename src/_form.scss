@@ -56,7 +56,7 @@ select {
  * 3. remove Firefox style if input is invalid
  */
 
-input:not([type="button"]),
+input:not([type="button"]):not([type="range"]),
 select,
 textarea {
     border: 1px solid var(--gray);
@@ -79,7 +79,7 @@ textarea {
  * 1. apply font style of parent/root element
  */
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="button"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="range"]),
 select,
 textarea {
     padding: .5em .625em;
@@ -159,6 +159,90 @@ input[type="search"] {
 
 input[type="date"] {
     cursor: pointer;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color: var(--gray);
+    height: .25em;
+    border-radius: 5px;
+    outline: 0;
+
+    @mixin thumb {
+        height: 1rem;
+        width: 1rem;
+        border-radius: 1em;
+        border: 1px solid var(--gray);
+        background-color: var(--white);
+        cursor: grab;
+    }
+
+    @mixin thumb-disabled {
+        cursor: not-allowed;
+        border-color: var(--gray);
+    }
+
+    @mixin thumb-focus {
+        box-shadow: var(--focus-border-style);
+    }
+
+    @mixin thumb-active {
+        cursor: grabbing;
+    }
+
+    @mixin thumb-focus-active-hover {
+        border-color: var(--blue);
+    }
+
+    &::-moz-focus-outer {
+        border: 0;
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+
+        @include thumb;
+    }
+
+    &:focus::-webkit-slider-thumb {
+        @include thumb-focus;
+    }
+
+    &:focus::-webkit-slider-thumb,
+    &:active::-webkit-slider-thumb,
+    &::-webkit-slider-thumb:hover {
+        @include thumb-focus-active-hover;
+    }
+
+    &:active::-webkit-slider-thumb {
+        @include thumb-active;
+    }
+
+    &[disabled]::-webkit-slider-thumb {
+        @include thumb-disabled;
+    }
+
+    &::-moz-range-thumb {
+        @include thumb;
+    }
+
+    &:focus::-moz-range-thumb {
+        @include thumb-focus;
+    }
+
+    &:focus::-moz-range-thumb,
+    &:active::-moz-range-thumb,
+    &::-moz-range-thumb:hover {
+        @include thumb-focus-active-hover;
+    }
+
+    &:active::-moz-range-thumb {
+        @include thumb-active;
+    }
+
+    &[disabled]::-moz-range-thumb {
+        @include thumb-disabled;
+    }
 }
 
 /*
