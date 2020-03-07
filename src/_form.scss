@@ -61,7 +61,7 @@ select,
 textarea {
     border: 1px solid var(--gray);
     font-size: inherit; /* 1 */
-    transition: border-color var(--transition-time);
+    transition: border-color var(--transition-time), box-shadow var(--transition-time);
     -webkit-appearance: none; /* 2 */
 
     &:focus {
@@ -86,15 +86,6 @@ textarea {
     border-radius: 5px;
     font-family: inherit; /* 1 */
     color: inherit; /* 1 */
-}
-
-input:not([type="button"]):not(:focus):hover,
-select:not(:focus):hover,
-textarea:not(:focus):hover,
-label:hover > input:not(:focus),
-label:hover > select:not(:focus),
-label:hover > textarea:not(:focus) {
-    border-color: var(--blue);
 }
 
 input[type="checkbox"],
@@ -175,6 +166,7 @@ input[type="range"] {
         border: 1px solid var(--gray);
         background-color: var(--white);
         cursor: grab;
+        transition: border-color var(--transition-time), box-shadow var(--transition-time);
     }
 
     @mixin thumb-disabled {
@@ -183,15 +175,12 @@ input[type="range"] {
     }
 
     @mixin thumb-focus {
+        border-color: var(--blue);
         box-shadow: var(--focus-border-style);
     }
 
     @mixin thumb-active {
         cursor: grabbing;
-    }
-
-    @mixin thumb-focus-active-hover {
-        border-color: var(--blue);
     }
 
     &::-moz-focus-outer {
@@ -204,14 +193,9 @@ input[type="range"] {
         @include thumb;
     }
 
-    &:focus::-webkit-slider-thumb {
-        @include thumb-focus;
-    }
-
     &:focus::-webkit-slider-thumb,
-    &:active::-webkit-slider-thumb,
-    &::-webkit-slider-thumb:hover {
-        @include thumb-focus-active-hover;
+    &:active::-webkit-slider-thumb {
+        @include thumb-focus;
     }
 
     &:active::-webkit-slider-thumb {
@@ -226,14 +210,9 @@ input[type="range"] {
         @include thumb;
     }
 
-    &:focus::-moz-range-thumb {
-        @include thumb-focus;
-    }
-
     &:focus::-moz-range-thumb,
-    &:active::-moz-range-thumb,
-    &::-moz-range-thumb:hover {
-        @include thumb-focus-active-hover;
+    &:active::-moz-range-thumb {
+        @include thumb-focus;
     }
 
     &:active::-moz-range-thumb {
@@ -256,12 +235,8 @@ input:-webkit-autofill {
 button,
 input,
 select,
-textarea,
-label:hover > input,
-label:hover > select,
-label:hover > textarea {
-    &[disabled],
-    &[disabled]:hover {
+textarea {
+    &[disabled] {
         border-color: var(--gray);
         background-color: var(--lightgray);
         cursor: not-allowed;

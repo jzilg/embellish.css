@@ -219,7 +219,7 @@ select,
 textarea {
 	border: 1px solid var(--gray);
 	font-size: inherit; /* 1 */
-	transition: border-color var(--transition-time);
+	transition: border-color var(--transition-time), box-shadow var(--transition-time);
 	-webkit-appearance: none; /* 2 */
 }
 
@@ -248,15 +248,6 @@ textarea {
 	border-radius: 5px;
 	font-family: inherit; /* 1 */
 	color: inherit; /* 1 */
-}
-
-input:not([type="button"]):not(:focus):hover,
-select:not(:focus):hover,
-textarea:not(:focus):hover,
-label:hover > input:not(:focus),
-label:hover > select:not(:focus),
-label:hover > textarea:not(:focus) {
-	border-color: var(--blue);
 }
 
 input[type="checkbox"],
@@ -342,16 +333,14 @@ input[type="range"]::-webkit-slider-thumb {
 	border: 1px solid var(--gray);
 	background-color: var(--white);
 	cursor: grab;
-}
-
-input[type="range"]:focus::-webkit-slider-thumb {
-	box-shadow: var(--focus-border-style);
+	-webkit-transition: border-color var(--transition-time), box-shadow var(--transition-time);
+	transition: border-color var(--transition-time), box-shadow var(--transition-time);
 }
 
 input[type="range"]:focus::-webkit-slider-thumb,
-input[type="range"]:active::-webkit-slider-thumb,
-input[type="range"]::-webkit-slider-thumb:hover {
+input[type="range"]:active::-webkit-slider-thumb {
 	border-color: var(--blue);
+	box-shadow: var(--focus-border-style);
 }
 
 input[type="range"]:active::-webkit-slider-thumb {
@@ -370,16 +359,14 @@ input[type="range"]::-moz-range-thumb {
 	border: 1px solid var(--gray);
 	background-color: var(--white);
 	cursor: grab;
-}
-
-input[type="range"]:focus::-moz-range-thumb {
-	box-shadow: var(--focus-border-style);
+	-moz-transition: border-color var(--transition-time), box-shadow var(--transition-time);
+	transition: border-color var(--transition-time), box-shadow var(--transition-time);
 }
 
 input[type="range"]:focus::-moz-range-thumb,
-input[type="range"]:active::-moz-range-thumb,
-input[type="range"]::-moz-range-thumb:hover {
+input[type="range"]:active::-moz-range-thumb {
 	border-color: var(--blue);
+	box-shadow: var(--focus-border-style);
 }
 
 input[type="range"]:active::-moz-range-thumb {
@@ -400,19 +387,9 @@ input:-webkit-autofill {
 }
 
 button[disabled],
-button[disabled]:hover,
 input[disabled],
-input[disabled]:hover,
 select[disabled],
-select[disabled]:hover,
-textarea[disabled],
-textarea[disabled]:hover,
-label:hover > input[disabled],
-label:hover > input[disabled]:hover,
-label:hover > select[disabled],
-label:hover > select[disabled]:hover,
-label:hover > textarea[disabled],
-label:hover > textarea[disabled]:hover {
+textarea[disabled] {
 	border-color: var(--gray);
 	background-color: var(--lightgray);
 	cursor: not-allowed;
