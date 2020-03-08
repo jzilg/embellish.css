@@ -391,6 +391,7 @@ input:-webkit-autofill {
 }
 
 button[disabled],
+[type="button"][disabled],
 input[disabled],
 select[disabled],
 textarea[disabled] {
