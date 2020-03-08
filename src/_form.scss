@@ -159,6 +159,10 @@ input[type="range"] {
     border-radius: 5px;
     outline: 0;
 
+    &[disabled] {
+        background-color: var(--gray);
+    }
+
     @mixin thumb {
         height: 1rem;
         width: 1rem;

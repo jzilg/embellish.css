@@ -321,6 +321,10 @@ input[type="range"] {
 	outline: 0;
 }
 
+input[type="range"][disabled] {
+	background-color: var(--gray);
+}
+
 input[type="range"]::-moz-focus-outer {
 	border: 0;
 }
