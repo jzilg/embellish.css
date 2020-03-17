@@ -24,7 +24,7 @@ button,
     font-family: inherit; /* 1 */
     font-size: inherit; /* 1 */
     color: inherit;
-    transition: border-color var(--transition-time), background-color var(--transition-time);
+    transition: border-color var(--transition-time), box-shadow var(--transition-time);
 
     &::-moz-focus-inner {
         border-width: 0;
