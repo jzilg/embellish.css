@@ -4,6 +4,7 @@
 
 a {
     color: var(--blue);
+    transition: box-shadow var(--transition-time);
 
     &:visited {
         color: var(--darkblue);
