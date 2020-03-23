@@ -20,12 +20,13 @@ tbody > tr:hover {
 th,
 td {
     padding: .5em .75em;
+    border-bottom: 1px solid var(--gray);
 }
 
 th {
     text-align: left;
 }
 
-td {
-    border-top: 1px solid var(--gray);
+tr:last-child > td {
+    border-bottom: 0;
 }
