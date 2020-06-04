@@ -113,28 +113,52 @@
         <fieldset>
             <legend>Input</legend>
             <label>
-                <span>Text</span>
-                <input type="text" placeholder="Enter some Text">
+                <span>Date</span>
+                <input type="date">
+            </label>
+            <label>
+                <span>Datetime-local</span>
+                <input type="datetime-local">
             </label>
             <label>
                 <span>Email</span>
                 <input type="email">
             </label>
             <label>
-                <span>Password</span>
-                <input type="password" placeholder="Password with at least 6 characters" required minlength="6">
-            </label>
-            <label>
-                <span>Search</span>
-                <input type="search">
+                <span>Month</span>
+                <input type="month">
             </label>
             <label>
                 <span>Number</span>
                 <input type="number">
             </label>
             <label>
-                <span>Date</span>
-                <input type="date">
+                <span>Password</span>
+                <input type="password" placeholder="Password with at least 6 characters" minlength="6" required>
+            </label>
+            <label>
+                <span>Search</span>
+                <input type="search">
+            </label>
+            <label>
+                <span>Tel</span>
+                <input type="tel">
+            </label>
+            <label>
+                <span>Text</span>
+                <input type="text" placeholder="Enter some Text">
+            </label>
+            <label>
+                <span>Time</span>
+                <input type="time">
+            </label>
+            <label>
+                <span>Url</span>
+                <input type="url">
+            </label>
+            <label>
+                <span>Week</span>
+                <input type="week">
             </label>
             <label>
                 <span>Datalist</span>
@@ -174,6 +198,21 @@
                 </select>
             </label>
             <label>
+                <span>multiple Select with optgroups</span>
+                <select multiple>
+                    <option value="" disabled>multiple Select</option>
+                    <optgroup label="Group I">
+                        <option value="">Option I</option>
+                        <option value="" selected>Option II</option>
+                    </optgroup>
+                    <optgroup label="Group II">
+                        <option value="">Option II</option>
+                        <option value="" selected>Option III</option>
+                    </optgroup>
+                    <option value="">Option IV</option>
+                </select>
+            </label>
+            <label>
                 <span>Select (disabled)</span>
                 <select disabled>
                     <option disabled selected>Select (disabled)</option>
@@ -189,6 +228,21 @@
                     <option>Option I</option>
                     <option>Option II</option>
                     <option>Option III</option>
+                </select>
+            </label>
+            <label>
+                <span>multiple Select with optgroups (disabled)</span>
+                <select multiple disabled>
+                    <option value="" disabled>multiple Select</option>
+                    <optgroup label="Group I">
+                        <option value="">Option I</option>
+                        <option value="" selected>Option II</option>
+                    </optgroup>
+                    <optgroup label="Group II">
+                        <option value="">Option II</option>
+                        <option value="" selected>Option III</option>
+                    </optgroup>
+                    <option value="">Option IV</option>
                 </select>
             </label>
         </fieldset>
@@ -239,10 +293,11 @@
         </fieldset>
         <fieldset>
             <legend>Button</legend>
-            <button type="submit">Button</button>
+            <button>Button</button>
+            <input type="button" value="Input type=&quot;button&quot;">
+            <input type="reset" value="Input type=&quot;reset&quot;">
+            <input type="submit" value="Input type=&quot;submit&quot;">
             <button type="submit" disabled>Button (disabled)</button>
-            <input type="button" value="Input Button">
-            <input type="button" value="Input Button (disabled)" disabled>
         </fieldset>
     </form>
     <hr>

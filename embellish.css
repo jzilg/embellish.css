@@ -106,61 +106,6 @@ hr {
 	border-color: var(--gray);
 }
 
-/**
- * 1. a button, or any element that behaves like one, is clickable like an
- *    anchor, so show the same cursor
- */
-
-button,
-[role="button"],
-[type="button"] {
-	cursor: pointer; /* 1 */
-}
-
-/**
- * 1. apply font style of parent/root element
- */
-
-button,
-[type="button"] {
-	padding: .5em 1em;
-	background-color: var(--lightgray);
-	border: 1px solid var(--gray);
-	border-radius: 5px;
-	font-family: inherit; /* 1 */
-	font-size: inherit; /* 1 */
-	color: inherit;
-	transition: border-color var(--transition-time), box-shadow var(--transition-time);
-}
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner {
-	border-width: 0;
-}
-
-button:hover,
-[type="button"]:hover {
-	border-color: var(--darkgray);
-}
-
-button:focus,
-[type="button"]:focus {
-	outline: 0;
-	border-color: var(--blue);
-	box-shadow: var(--focus-border-style);
-}
-
-button:active,
-[type="button"]:active {
-	border-color: var(--darkgray);
-	box-shadow: inset 0 0.15em 0.3em var(--gray);
-}
-
-button[disabled],
-[type="button"][disabled] {
-	box-shadow: none;
-}
-
 /* stylelint-disable no-descending-specificity */
 
 /* form */
@@ -184,72 +129,78 @@ legend {
 	padding-left: 0; /* 1 */
 }
 
-/*
- * 1. a select is clickable like an anchor, so show the same cursor
- * 2. remove the inner dotted line in Firefox
- * 3. remove browser own select style
- */
+/* global */
 
-select {
-	cursor: pointer; /* 1 */
-	background-color: var(--white);
-}
-
-select:-moz-focusring {
-	color: transparent; /* 2 */
-	text-shadow: 0 0 0 var(--black); /* 2 */
-}
-
-select:not([multiple]):not([size]) {
-	padding-right: 1.75em;
-	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 5 L10 15 L0 5" stroke="currentColor" stroke-width="2" fill="none"></path></svg>');
-	background-repeat: no-repeat;
-	background-position: right .5em center;
-	background-size: .813em;
-	-moz-appearance: none; /* 3 */
-}
-
-/*
- * 1. apply font style of parent/root element
- * 2. remove browser own input style
- * 3. remove Firefox style if input is invalid
- */
-
-input:not([type="button"]):not([type="range"]),
+button,
+input,
 select,
 textarea {
-	border: 1px solid var(--gray);
-	font-size: inherit; /* 1 */
+	--border: 1px solid var(--gray);
+	--border-radius: 5px;
+	--height: 2.5em;
+	--input-padding-h: .5em;
+	--button-padding-h: 1em;
+	--padding-v: .625em;
 	transition: border-color var(--transition-time), box-shadow var(--transition-time);
-	-webkit-appearance: none; /* 2 */
+	-moz-appearance: none;
+	-webkit-appearance: none;
 }
 
-input:not([type="button"]):not([type="range"]):focus,
-select:focus,
-textarea:focus {
+/* text like inputs */
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+	height: var(--height);
+	padding-right: var(--input-padding-h);
+	padding-left: var(--input-padding-h);
+	border: var(--border);
+	border-radius: var(--border-radius);
+	font: inherit;
+}
+
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus {
 	outline: 0;
 	border-color: var(--blue);
 	box-shadow: var(--focus-border-style);
 }
 
-input:not([type="button"]):not([type="range"]):not(:focus):-moz-ui-invalid,
-select:not(:focus):-moz-ui-invalid,
-textarea:not(:focus):-moz-ui-invalid {
+input[type="date"]:not(:focus):-moz-ui-invalid,
+input[type="datetime-local"]:not(:focus):-moz-ui-invalid,
+input[type="email"]:not(:focus):-moz-ui-invalid,
+input[type="month"]:not(:focus):-moz-ui-invalid,
+input[type="number"]:not(:focus):-moz-ui-invalid,
+input[type="password"]:not(:focus):-moz-ui-invalid,
+input[type="search"]:not(:focus):-moz-ui-invalid,
+input[type="tel"]:not(:focus):-moz-ui-invalid,
+input[type="text"]:not(:focus):-moz-ui-invalid,
+input[type="time"]:not(:focus):-moz-ui-invalid,
+input[type="url"]:not(:focus):-moz-ui-invalid,
+input[type="week"]:not(:focus):-moz-ui-invalid {
 	box-shadow: none; /* 3 */
 }
 
-/*
- * 1. apply font style of parent/root element
- */
-
-input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="range"]),
-select,
-textarea {
-	padding: .5em .625em;
-	border-radius: 5px;
-	font-family: inherit; /* 1 */
-	color: inherit; /* 1 */
-}
+/* radio & checkbox */
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -257,8 +208,9 @@ input[type="radio"] {
 	height: 1em;
 	margin: 0;
 	background-color: var(--white);
+	border: var(--border);
+	font-size: inherit;
 	cursor: pointer;
-	-moz-appearance: none;
 }
 
 input[type="checkbox"]:before,
@@ -267,6 +219,13 @@ input[type="radio"]:before {
 	display: block;
 	width: 100%;
 	height: 100%;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+	outline: 0;
+	border-color: var(--blue);
+	box-shadow: var(--focus-border-style);
 }
 
 input[type="checkbox"] {
@@ -298,6 +257,78 @@ input[type="radio"]:before {
 
 input[type="radio"]:checked:before {
 	background-color: var(--blue);
+}
+
+/* textarea */
+
+textarea {
+	padding: var(--input-padding-h) var(--padding-v);
+	font: inherit;
+	border: var(--border);
+	border-radius: var(--border-radius);
+}
+
+textarea:focus {
+	outline: 0;
+	border-color: var(--blue);
+	box-shadow: var(--focus-border-style);
+}
+
+textarea:not(:focus):-moz-ui-invalid {
+	box-shadow: none; /* 3 */
+}
+
+/* select */
+
+select {
+	border: var(--border);
+	border-radius: var(--border-radius);
+	font: inherit;
+	cursor: pointer;
+}
+
+select:focus {
+	outline: 0;
+	border-color: var(--blue);
+	box-shadow: var(--focus-border-style);
+}
+
+select:-moz-focusring {
+	color: transparent; /* 2 */
+	text-shadow: 0 0 0 black; /* 2 */
+}
+
+select:not([multiple]):not([size]) {
+	height: var(--height);
+	padding-right: 1.75em;
+	padding-left: var(--padding-v);
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 5 L10 15 L0 5" stroke="currentColor" stroke-width="2" fill="none"></path></svg>');
+	background-repeat: no-repeat;
+	background-position: right .5em center;
+	background-size: .813em;
+}
+
+select[multiple],
+select[size] {
+	padding: 0;
+	height: auto;
+}
+
+option {
+	padding: var(--padding-v) var(--button-padding-h);
+}
+
+optgroup {
+	padding-right: var(--button-padding-h);
+	padding-left: var(--button-padding-h);
+	font-style: normal;
+}
+
+optgroup option {
+	padding-right: calc(var(--button-padding-h) * 3);
+	padding-left: calc(var(--button-padding-h) * 3);
+	margin-left: calc(var(--button-padding-h) * -1.5);
+	margin-right: calc(var(--button-padding-h) * -1.5);
 }
 
 /*
@@ -391,8 +422,62 @@ input:-webkit-autofill {
 	-webkit-box-shadow: 0 0 0 99em #fff inset; /* 1 */
 }
 
+/* button */
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	height: var(--height);
+	padding: 0 var(--button-padding-h);
+	background-color: #f5f5f5;
+	border: 1px solid #c5c5c5;
+	border-radius: 5px;
+	font: inherit;
+	cursor: pointer;
+}
+
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border-width: 0;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: var(--darkgray);
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+	outline: 0;
+	border-color: var(--blue);
+	box-shadow: var(--focus-border-style);
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: var(--darkgray);
+	box-shadow: inset 0 0.15em 0.3em var(--gray);
+}
+
+button[disabled]:active,
+input[type="button"][disabled]:active,
+input[type="reset"][disabled]:active,
+input[type="submit"][disabled]:active {
+	box-shadow: none;
+}
+
+/* disabled */
+
 button[disabled],
-[type="button"][disabled],
 input[disabled],
 select[disabled],
 textarea[disabled] {

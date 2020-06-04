@@ -25,44 +25,44 @@ legend {
     @extend caption;
 }
 
-/*
- * 1. a select is clickable like an anchor, so show the same cursor
- * 2. remove the inner dotted line in Firefox
- * 3. remove browser own select style
- */
+/* global */
 
-select {
-    cursor: pointer; /* 1 */
-    background-color: var(--white);
-
-    &:-moz-focusring {
-        color: transparent; /* 2 */
-        text-shadow: 0 0 0 var(--black); /* 2 */
-    }
-
-    &:not([multiple]):not([size]) {
-        padding-right: 1.75em;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 5 L10 15 L0 5" stroke="currentColor" stroke-width="2" fill="none"></path></svg>');
-        background-repeat: no-repeat;
-        background-position: right .5em center;
-        background-size: .813em;
-        -moz-appearance: none; /* 3 */
-    }
-}
-
-/*
- * 1. apply font style of parent/root element
- * 2. remove browser own input style
- * 3. remove Firefox style if input is invalid
- */
-
-input:not([type="button"]):not([type="range"]),
+button,
+input,
 select,
 textarea {
-    border: 1px solid var(--gray);
-    font-size: inherit; /* 1 */
+    --border: 1px solid var(--gray);
+    --border-radius: 5px;
+    --height: 2.5em;
+    --input-padding-h: .5em;
+    --button-padding-h: 1em;
+    --padding-v: .625em;
+
     transition: border-color var(--transition-time), box-shadow var(--transition-time);
-    -webkit-appearance: none; /* 2 */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+/* text like inputs */
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+    height: var(--height);
+    padding-right: var(--input-padding-h);
+    padding-left: var(--input-padding-h);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    font: inherit;
 
     &:focus {
         outline: 0;
@@ -75,18 +75,7 @@ textarea {
     }
 }
 
-/*
- * 1. apply font style of parent/root element
- */
-
-input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="range"]),
-select,
-textarea {
-    padding: .5em .625em;
-    border-radius: 5px;
-    font-family: inherit; /* 1 */
-    color: inherit; /* 1 */
-}
+/* radio & checkbox */
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -94,14 +83,21 @@ input[type="radio"] {
     height: 1em;
     margin: 0;
     background-color: var(--white);
+    border: var(--border);
+    font-size: inherit;
     cursor: pointer;
-    -moz-appearance: none;
 
     &:before {
         content: "";
         display: block;
         width: 100%;
         height: 100%;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: var(--blue);
+        box-shadow: var(--focus-border-style);
     }
 }
 
@@ -134,6 +130,78 @@ input[type="radio"] {
     &:checked:before {
         background-color: var(--blue);
     }
+}
+
+/* textarea */
+
+textarea {
+    padding: var(--input-padding-h) var(--padding-v);
+    font: inherit;
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    &:focus {
+        outline: 0;
+        border-color: var(--blue);
+        box-shadow: var(--focus-border-style);
+    }
+
+    &:not(:focus):-moz-ui-invalid {
+        box-shadow: none; /* 3 */
+    }
+}
+
+/* select */
+
+select {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    font: inherit;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+        border-color: var(--blue);
+        box-shadow: var(--focus-border-style);
+    }
+
+    &:-moz-focusring {
+        color: transparent; /* 2 */
+        text-shadow: 0 0 0 black; /* 2 */
+    }
+
+    &:not([multiple]):not([size]) {
+        height: var(--height);
+        padding-right: 1.75em;
+        padding-left: var(--padding-v);
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 5 L10 15 L0 5" stroke="currentColor" stroke-width="2" fill="none"></path></svg>');
+        background-repeat: no-repeat;
+        background-position: right .5em center;
+        background-size: .813em;
+    }
+
+    &[multiple],
+    &[size] {
+        padding: 0;
+        height: auto;
+    }
+}
+
+option {
+    padding: var(--padding-v) var(--button-padding-h);
+}
+
+optgroup {
+    padding-right: var(--button-padding-h);
+    padding-left: var(--button-padding-h);
+    font-style: normal;
+}
+
+optgroup option {
+    padding-right: calc(var(--button-padding-h) * 3);
+    padding-left: calc(var(--button-padding-h) * 3);
+    margin-left: calc(var(--button-padding-h) * -1.5);
+    margin-right: calc(var(--button-padding-h) * -1.5);
 }
 
 /*
@@ -236,15 +304,52 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 99em #fff inset; /* 1 */
 }
 
+/* button */
+
 button,
-[type="button"],
-input,
-select,
-textarea {
-    &[disabled] {
-        border-color: var(--gray);
-        background-color: var(--lightgray);
-        cursor: not-allowed;
-        opacity: .5;
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    height: var(--height);
+    padding: 0 var(--button-padding-h);
+    background-color: #f5f5f5;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    font: inherit;
+    cursor: pointer;
+
+    &::-moz-focus-inner {
+        border-width: 0;
     }
+
+    &:hover {
+        border-color: var(--darkgray);
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: var(--blue);
+        box-shadow: var(--focus-border-style);
+    }
+
+    &:active {
+        border-color: var(--darkgray);
+        box-shadow: inset 0 .15em .3em var(--gray);
+    }
+
+    &[disabled]:active {
+        box-shadow: none;
+    }
+}
+
+/* disabled */
+
+button[disabled],
+input[disabled],
+select[disabled],
+textarea[disabled] {
+    border-color: var(--gray);
+    background-color: var(--lightgray);
+    cursor: not-allowed;
+    opacity: .5;
 }
