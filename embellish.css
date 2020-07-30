@@ -498,10 +498,12 @@ figure {
 
 /**
  * 1. make image scalable if viewport < img width
+ * 2. set height relative to width if viewport < img width
  */
 
 img {
 	max-width: 100%; /* 1 */
+	height: auto; /* 2 */
 }
 
 /* table */
