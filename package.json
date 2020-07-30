@@ -1,6 +1,6 @@
 {
   "name": "embellish.css",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "CSS file that beautifies your HTML with element selectors only",
   "main": "embellish.css",
   "style": "embellish.css",
