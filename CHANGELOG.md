@@ -1,5 +1,11 @@
 # Changes to embellish.css
 
+## 4.0.1 (July 30, 2020)
+
+### Fixes
+
+* Add `height: auto` for `img`. Now Images with a height property will be rendered correct if the viewport width is smaller than the width of the Image.
+
 ## 4.0.0 (June 04, 2020)
 
 ### Breaking Changes
