@@ -399,18 +399,22 @@
     <script>
         const progressNumberElement = document.getElementById('progress-number')
         const progressElement = document.getElementsByTagName('progress')[0]
-        let progress = 0
 
-        function simulateProgress() {
-            if (progress > 100) {
-                progress = 0
+        function simulateProgress(progressVal) {
+            if (progressVal > 100) {
+                simulateProgress(0)
+                return
             }
-            progressElement.value = progress
-            progressNumberElement.innerText = progress
-            progress++
+
+            progressElement.value = progressVal
+            progressNumberElement.innerText = progressVal
+
+            setTimeout(() => {
+                simulateProgress(progressVal + 1)
+            }, 150)
         }
 
-        setInterval(simulateProgress, 150)
+        simulateProgress(0)
     </script>
 </body>
 </html>
