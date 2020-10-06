@@ -19,15 +19,13 @@
     <button class="style-toggle-btn" data-framework-id="milligram" type="button">Milligram</button>
     <script>
         const linkElement = document.head.querySelector('link')
-
+        const toggleButtons = document.querySelectorAll('.style-toggle-btn')
         const frameworkUrls = {
             embelish: 'embellish.css',
             bootstrap: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
             foundation: 'https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css',
             milligram: 'https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css',
         }
-
-        const toggleButtons = document.querySelectorAll('.style-toggle-btn')
 
         toggleButtons.forEach((toggleButton) => {
             const frameworkId = toggleButton.getAttribute('data-framework-id')
@@ -380,12 +378,12 @@
         const dialog = document.getElementsByTagName('dialog')[0]
         const toggleDialogBtn = document.getElementById('toggle-dialog-btn')
 
-        const toggleDialog = (show) => {
+        function toggleDialog() {
             const isOpen = dialog.getAttribute('open')
+
             if (isOpen) {
                 dialog.removeAttribute('open')
-            }
-            else {
+            } else {
                 dialog.setAttribute('open', true)
             }
         }
