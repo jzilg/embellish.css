@@ -1,5 +1,11 @@
 # Changes to embellish.css
 
+## 5.0.0 (December 30, 2020)
+
+### Breaking Changes
+
+* Remove styling for `<caption>`. You can use a `<h3>` inside of the `<caption>` if you want to maintain the style.
+
 ## 4.0.1 (July 30, 2020)
 
 ### Fixes
