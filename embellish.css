@@ -122,11 +122,15 @@ fieldset {
 
 /**
  * 1. remove padding from legend
+ * 2. let it look more like a h3
  */
 
 legend {
 	padding-right: 0; /* 1 */
 	padding-left: 0; /* 1 */
+	margin-bottom: 1em; /* 2 */
+	font-size: 1.17em; /* 2 */
+	font-weight: bold; /* 2 */
 }
 
 /* global */
@@ -511,13 +515,6 @@ img {
 table {
 	max-width: 100%;
 	border-spacing: 0;
-}
-
-caption,
-legend {
-	margin-bottom: 1em;
-	font-size: 1.17em;
-	font-weight: bold;
 }
 
 tbody > tr:hover {
