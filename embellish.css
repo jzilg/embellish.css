@@ -542,14 +542,6 @@ tr:last-child > td {
 	border-bottom: 0;
 }
 
-/* dialog */
-
-dialog {
-	position: fixed;
-	top: 1em;
-	border-color: var(--black);
-}
-
 progress {
 	height: 1em;
 	border-width: 0;

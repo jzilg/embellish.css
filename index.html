@@ -369,28 +369,6 @@
         </tbody>
     </table>
     <hr>
-    <h2>Dialog</h2>
-    <button id="toggle-dialog-btn" type="button">Toggle Dialog</button>
-    <dialog>
-        An Important Message
-    </dialog>
-    <script>
-        const dialog = document.getElementsByTagName('dialog')[0]
-        const toggleDialogBtn = document.getElementById('toggle-dialog-btn')
-
-        function toggleDialog() {
-            const isOpen = dialog.getAttribute('open')
-
-            if (isOpen) {
-                dialog.removeAttribute('open')
-            } else {
-                dialog.setAttribute('open', true)
-            }
-        }
-
-        toggleDialogBtn.addEventListener('click', toggleDialog)
-    </script>
-    <hr>
     <h2>Progress Bar</h2>
     <progress max="100" value="0"></progress>
     <span id="progress-number">0</span>%
