@@ -88,8 +88,10 @@ code {
 
 pre code {
 	display: block;
+	padding: 1.5em;
 	border-left: 2px solid var(--blue);
 	line-height: 1.5;
+	white-space: pre-wrap;
 }
 
 /* horizontal ruler */
