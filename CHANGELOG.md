@@ -1,5 +1,15 @@
 # Changes to embellish.css
 
+## 6.0.0 (February 05, 2021)
+
+### Breaking Changes
+
+* Remove support for `<dialog>`. Applied styling was not very significant and the element itself is not implemented by all browsers.
+* Update styling of `<fieldset>` and `<legend>` to be closer to the default browser styling.
+
+### Features
+* Add `padding: 1.5em` and `white-space: pre-wrap` to `<pre><code></code></pre>` blocks.
+
 ## 5.0.0 (December 30, 2020)
 
 ### Breaking Changes
