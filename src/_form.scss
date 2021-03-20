@@ -47,6 +47,7 @@ textarea {
     --button-padding-h: 1em;
     --padding-v: .625em;
 
+    margin: 0;
     transition: border-color var(--transition-time), box-shadow var(--transition-time);
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -90,7 +91,6 @@ input[type="checkbox"],
 input[type="radio"] {
     width: 1em;
     height: 1em;
-    margin: 0;
     background-color: var(--white);
     border: var(--border);
     font-size: inherit;
