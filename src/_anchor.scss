@@ -16,7 +16,7 @@ a {
 
     &:focus {
         outline: 0;
-        box-shadow: var(--focus-border-style);
+        box-shadow: 0 0 0 3px var(--white), 0 0 0 7px var(--focus-color);
         border-radius: 2px;
     }
 }

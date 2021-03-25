@@ -13,7 +13,8 @@
     --lightblue: #a0cefe;
     --orange: #fc642d;
     --transition-time: .2s;
-    --focus-border-style: 0 0 0 3px var(--lightblue);
+    --focus-color: var(--lightblue);
+    --focus-border-style: 0 0 0 3px var(--focus-color);
 }
 
 *,
