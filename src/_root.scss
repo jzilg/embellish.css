@@ -34,7 +34,8 @@ html {
 }
 
 /**
-* use nice system font:
+* 1. set background color to white for some rare browser who does not have that default
+* 2. use nice system font:
 *     -apple-system: macOS/iOS
 *     Segoe UI: Windows
 *     Roboto: Android
@@ -46,7 +47,8 @@ html {
 
 body {
     margin: 1.375em;
-    font-family: -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Open Sans", sans-serif;
+    background-color: var(--white); /* 1 */
+    font-family: -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Open Sans", sans-serif; /* 2 */
     color: var(--black);
     line-height: 1.375;
 
