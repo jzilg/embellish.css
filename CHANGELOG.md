@@ -1,5 +1,17 @@
 # Changes to embellish.css
 
+## 6.1.0 (March 25, 2021)
+
+### Features
+
+* Reset `margin` for `<input>`, `<select>`, `<button>` and `<textarea>` in Safari.
+* Set `background-color` to white for some rare browser which does not have that default.
+* Increase size of `[type="checkbox"]`, `[type="radio"]` and `range-thumb`.
+
+### Fixes
+
+* Fix focus style for `<a>`.
+
 ## 6.0.0 (February 05, 2021)
 
 ### Breaking Changes
