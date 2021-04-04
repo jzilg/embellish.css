@@ -96,6 +96,7 @@ input[type="radio"] {
     border: var(--border);
     font-size: inherit;
     cursor: pointer;
+    vertical-align: bottom;
 
     &:before {
         content: "";
