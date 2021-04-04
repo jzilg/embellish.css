@@ -1,5 +1,12 @@
 # Changes to embellish.css
 
+## 6.1.1 (April 04, 2021)
+
+### Fixes
+
+* Fix vertical alignment of `[type="radio"]` and `[type="checkbox"]` with their labels.
+* Add distinction of `:focus` and `:focus-visible` for `<a>`.
+
 ## 6.1.0 (March 25, 2021)
 
 ### Features
