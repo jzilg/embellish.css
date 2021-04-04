@@ -15,6 +15,11 @@ a {
     }
 
     &:focus {
+        outline: 1px dotted var(--darkgray);
+        outline-offset: 1px;
+    }
+
+    &:focus-visible {
         outline: 0;
         box-shadow: 0 0 0 3px var(--white), 0 0 0 7px var(--focus-color);
         border-radius: 2px;
