@@ -165,8 +165,6 @@ textarea {
 	--control-size: 1.5rem;
 	margin: 0;
 	transition: border-color var(--transition-time), box-shadow var(--transition-time);
-	-moz-appearance: none;
-	-webkit-appearance: none;
 }
 
 /* text like inputs */
@@ -229,57 +227,16 @@ input[type=checkbox],
 input[type=radio] {
 	width: var(--control-size);
 	height: var(--control-size);
-	background-color: var(--white);
-	border: var(--border);
-	font-size: inherit;
 	cursor: pointer;
 	vertical-align: bottom;
+	accent-color: var(--blue);
 }
 
-input[type=checkbox]:before,
-input[type=radio]:before {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
-input[type=checkbox]:focus,
-input[type=radio]:focus {
+input[type=checkbox]:focus-visible,
+input[type=radio]:focus-visible {
 	outline: 0;
 	border-color: var(--blue);
 	box-shadow: var(--focus-border-style);
-}
-
-input[type=checkbox] {
-	border-radius: 5px;
-}
-
-input[type=checkbox]:before {
-	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M18 1.5 L8 17 L1.5 12" stroke-width="4" stroke="%233b88fd" fill="none" /></svg>');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 75%;
-	opacity: 0;
-	transition: opacity var(--transition-time);
-}
-
-input[type=checkbox]:checked:before {
-	opacity: 1;
-}
-
-input[type=radio] {
-	border-radius: 100%;
-	padding: 0.125em;
-}
-
-input[type=radio]:before {
-	border-radius: inherit;
-	transition: background-color var(--transition-time);
-}
-
-input[type=radio]:checked:before {
-	background-color: var(--blue);
 }
 
 /* textarea */
@@ -304,8 +261,10 @@ textarea:not(:focus):-moz-ui-invalid {
 /* select */
 
 select {
+	appearance: none;
 	border: var(--border);
 	border-radius: var(--border-radius);
+	background-color: var(--white);
 	font: inherit;
 	cursor: pointer;
 }
